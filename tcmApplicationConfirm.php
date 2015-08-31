@@ -1,9 +1,10 @@
 <?php
 	error_reporting (E_ALL ^ E_NOTICE);
-	header('X-UA-Compatible: IE=edge,chrome=1');
-	header('Cache-Control: max-age=30, must-revalidate');
+    header('X-UA-Compatible: IE=edge,chrome=1');
+    header('Content-Type: text/html; charset=utf-8');
+    header('Cache-Control: max-age=30, must-revalidate');
+    ini_set("display_errors", 1);
 	date_default_timezone_set('America/Chicago');
-	$testing = "true";
 	$date = new DateTime();
     //display_errors   =   Off
 
@@ -19,7 +20,7 @@
     if(isset($_SERVER['HTTP_REFERER'])) {
 //        echo "SUBMIT: HTTP REFERRER SET OK<br>";
         session_start();
-        require("i_ODBC_Functions.php");
+        require("i_PDOFunctions.php");
         require("includes/i_TCMSettings.php");
 //=	CHECK TO MAKE SURE THE SUBMIT IS COMING FROM THE PERMISSION FORM ===========================================================================================
         if(strtolower(returnPageName($_SERVER['HTTP_REFERER'])) == 'tcmapplication.php') {
@@ -28,17 +29,14 @@
 //                echo "SUBMIT VALUE OK<br>";
                 $formSecret=$_POST['formSecret'];												//= ASSIGN SECRET NUMBER FROM HIDDEN FIELD TO VARIABLE FOR COMPARISON TO STORED VALUE
                 $ipAddress = getIPAddr();
-                if($_SERVER['COMPUTERNAME'] == 'RODBY') {
-                    $connectionVar = 'GSNETX';
-                } else if ($_SERVER['COMPUTERNAME'] == 'V-WWW04-WEBER') {
-                }
-                require("i_ODBC_Connection.php");												//=	CREATES ODBC DATA CONNECTION TO DATABASE
+                $connectionVar = 'GSNETX';
+                require("i_PDOConnection.php");												//=	CREATES ODBC DATA CONNECTION TO DATABASE
                 //	require_once('class.phpmailer.php');
                 require_once ('lib/swift_required.php');
-                $ipAddress = getIPAddr();
-                setVars('volFName:str,volLName:str,volEmail:str,volPhone:str,volIDType:str,volID:str,volTroop:str,volSU:str,txt1:str,txt2:str,txt3:str,txt4:str,txt5:str,txt6:str,txt7:str,txt8:str,txt9:str,txt10:str,txt11:str,txt12:str,txt13:str,txt14:str,volSignedName:str,', 0, 0, 'TCM Application Form');
+                setVars('volFName:str,volLName:str,volEmail:str,volPhone:str,volIDType:str,volID:str,volTroop:str,volSU:str,txt1:str,txt2:str,txt3:str,txt4:str,txt5:str,txt6:str,txt7:str,txt8:str,txt9:str,txt10:str,txt11:str,txt12:str,txt13:str,txt14:str,volSignedName:str,', 0, 1, 'TCM Application Form');
                 $pageTitle = "Troop Cookie Manager Application Form";
                 $pageHeader = "TroopCookieManagerApplication";
+                exit();
                 //==============================================================================================================================================
                 //= PROCESS DATA FROM FORM	====================================================================================================================
                 //= ONCE FORM HAS BEEN SUBMITTED WRITE THE ORDER INFORMATION TO THE DATABASE	                                                               =

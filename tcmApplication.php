@@ -5,9 +5,8 @@
     header('Content-Type: text/html; charset=utf-8');
     header('Cache-Control: max-age=30, must-revalidate');
     ini_set("display_errors", 1);
-    ini_set("display_errors", 1);
-    require("i_PDOConnection.php");								//=	CREATES DATA CONNECTION TO DATABASE
-    require("i_PDOFunctions.php");								//= LOAD FORM FUNCTIONS
+    require("i_PDOConnection.php");								    //=	CREATES DATA CONNECTION TO DATABASE
+    require("i_PDOFunctions.php");								    //= LOAD FORM FUNCTIONS
     require("includes/i_TCMSettings.php");
     session_start();												//= START SESSION TO PREVENT RE-SUBMITTING FORM
     $formSecret=md5(uniqid(rand(), true));							//= SET SECRET NUMBER TO USE IN DUPLICATE SUBMISSION DETECTION
@@ -21,32 +20,10 @@
     <head>
         <title>Volunteer Appreciation Awards Online Nomination Form</title>
         <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-        <script src="js/vendors/modernizr.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-        <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.js"></script>
-        <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/additional-methods.js"></script>
-        <script src="js/vendors/jquery.maskedinput.js"></script>
-        <script src="js/vendors/jquery.maskMoney.js"></script>
-        <script src="js/i_texasCookieTime.js" type="text/javascript"></script>
-        <!--<script src="js/i_tcmApplicationValidation.js" type="text/javascript"></script>-->
-
-        <script>
-            // function checkPopup() {
-            // var openWin = window.open("http://www.google.com","directories=no,height=100,width=100,menubar=no,resizable=no,scrollbars=no,status=no,titlebar=no,top=0,location=no");
-            // if (!openWin) {
-            // alert("A popup blocker was detected. Please Remove popupblocker for this site");
-            // } else {
-            // openWin.close();
-            // //alert("No popup blocker dectected");
-            // }
-            // }
-            // window.onload = checkPopup;
-        </script>
         <link href="css/txct.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
     </head>
-    <body onload="copyFormSecret('<?php echo $secret;?>');focusIt('girlYes');">
+    <body onload="copyFormSecret('<?php echo $secret;?>');focusIt('volFName');">
         <div>
             <div class="container" style="position:relative;background-color:#00ae58;">
                 <div class="span-7"><a href="http://www.gsnetx.org"><img src="img/gsnetxLogo_White.png" width="225" height="96" alt="Girl Scouts of Northeast Texas" id="gsnetxLogo" /></a></div>
@@ -111,9 +88,7 @@
                             <div class="span-2 last"><p>&#32;</p></div>
                             <div class="span-24" style="margin-bottom:500px;border-bottom:1px solid #fff;"></div>
                         </div>
-
                     <?php } else if (today >endDate) {?>
-
                         <div class="container showWhite" style="position:relative;">
                             <div class="span-24">&#160;</div>
                             <div class="span-24"><p>&nbsp;</p></div>
@@ -443,5 +418,27 @@
                 </div>
             </form>
         </div>
+        <script src="js/vendors/modernizr.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+        <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.js"></script>
+        <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/additional-methods.js"></script>
+        <script src="js/vendors/jquery.maskedinput.js"></script>
+        <script src="js/i_texasCookieTime.js" type="text/javascript"></script>
+        <!--<script src="js/i_tcmApplicationValidation.js" type="text/javascript"></script>-->
+
+        <script>
+            // function checkPopup() {
+            // var openWin = window.open("http://www.google.com","directories=no,height=100,width=100,menubar=no,resizable=no,scrollbars=no,status=no,titlebar=no,top=0,location=no");
+            // if (!openWin) {
+            // alert("A popup blocker was detected. Please Remove popupblocker for this site");
+            // } else {
+            // openWin.close();
+            // //alert("No popup blocker dectected");
+            // }
+            // }
+            // window.onload = checkPopup;
+        </script>
+
     </body>
 </html>

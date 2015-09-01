@@ -23,7 +23,7 @@
         <link href="css/txct.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
     </head>
-    <body onload="copyFormSecret('<?php echo $secret;?>');focusIt('volFName');">
+    <body onload="copyFormSecret('<?php echo $formSecret;?>');focusIt('volFName');">
         <div>
             <div class="container" style="position:relative;background-color:#00ae58;">
                 <div class="span-7"><a href="http://www.gsnetx.org"><img src="img/gsnetxLogo_White.png" width="225" height="96" alt="Girl Scouts of Northeast Texas" id="gsnetxLogo" /></a></div>
@@ -412,7 +412,7 @@
                 <div style="clear:both;">
                     <br><br>
                     <input type="hidden" name="submitRegistration" id="submitRegistration" value="submitTroopCookieManagerRegistration" tabindex="-1" />
-                    <input type="hidden" name="formSecret" id="formSecret" value="" tabindex="-1" placeholder="formSecret" />
+                    <input type="text" name="formSecret" id="formSecret" value="" tabindex="-1" placeholder="formSecret" />
                     <div class="formLableH">Ignore if visible: <label for="labrea">&#160;</label><input type="text" name="labrea" id="labrea" tabindex="-1" /></div>
                     <div style="display: none;"><a href="https://forms.gsnetx.org/chap.php">servo-staircase</a></div>
                 </div>

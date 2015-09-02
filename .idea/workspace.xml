@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0618caea-f26f-4847-8a66-be5a9fea7f91" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/Thumbs.db" afterPath="$PROJECT_DIR$/img/Thumbs.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tcmApplication.php" afterPath="$PROJECT_DIR$/tcmApplication.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tcmApplicationConfirm.php" afterPath="$PROJECT_DIR$/tcmApplicationConfirm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/txct.css" afterPath="$PROJECT_DIR$/css/txct.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="txct2016.iws" />
@@ -27,8 +31,31 @@
       <file leaf-file-name="tcmApplication.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tcmApplication.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="248" column="76" selection-start-line="248" selection-start-column="76" selection-end-line="248" selection-end-column="76" />
+            <state vertical-scroll-proportion="51.653847">
+              <caret line="227" column="157" selection-start-line="227" selection-start-column="157" selection-end-line="227" selection-end-column="157" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="confirmation.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../JoinTheFun/confirmation.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.24744609">
+              <caret line="227" column="102" selection-start-line="227" selection-start-column="102" selection-end-line="227" selection-end-column="102" />
+              <folding>
+                <marker date="1441233217402" expanded="true" signature="3852:3961" placeholder="..." />
+                <marker date="1441233217402" expanded="true" signature="4013:4074" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="confirmation.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../JoinTheFun_OS/confirmation.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.1923077">
+              <caret line="70" column="86" selection-start-line="70" selection-start-column="86" selection-end-line="70" selection-end-column="86" />
               <folding />
             </state>
           </provider>
@@ -50,17 +77,17 @@
         <entry file="file://$PROJECT_DIR$/css/txct.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="143" column="45" selection-start-line="143" selection-start-column="45" selection-end-line="143" selection-end-column="45" />
+              <caret line="502" column="0" selection-start-line="502" selection-start-column="0" selection-end-line="502" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tcmApplicationConfirm.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tcmApplicationConfirm.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tcmApplicationConfirm.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+            <state vertical-scroll-proportion="-15.038462">
+              <caret line="86" column="50" selection-start-line="86" selection-start-column="50" selection-end-line="86" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -98,16 +125,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="default.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../awardNominations/default.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="i_PDOFunctionsDev.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../../includes/i_PDOFunctionsDev.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -139,11 +156,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/css/txct.css" />
-        <option value="$PROJECT_DIR$/tcmApplication.php" />
         <option value="$PROJECT_DIR$/../../../includes/i_PDOFunctions.php" />
         <option value="$PROJECT_DIR$/../../../includes/i_PDOFunctionsDev.php" />
+        <option value="$PROJECT_DIR$/tcmApplication.php" />
+        <option value="$PROJECT_DIR$/css/txct.css" />
         <option value="$PROJECT_DIR$/tcmApplicationConfirm.php" />
+        <option value="$PROJECT_DIR$/../JoinTheFun/confirmation.php" />
       </list>
     </option>
   </component>
@@ -307,12 +325,18 @@
       <option name="project" value="LOCAL" />
       <updated>1441201589642</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Completed PDO Conversion">
+      <created>1441201732573</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1441201732573</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="0" width="1452" height="1066" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1724138" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -320,7 +344,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32834226" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32834226" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -510,14 +534,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/txct.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="143" column="45" selection-start-line="143" selection-start-column="45" selection-end-line="143" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://B:/_secure/tct2015/tcmApplication.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -540,14 +556,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tcmApplication.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="248" column="76" selection-start-line="248" selection-start-column="76" selection-end-line="248" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -591,11 +599,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tcmApplicationConfirm.php">
+    <entry file="file://$PROJECT_DIR$/tcmApplication.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="51.653847">
+          <caret line="227" column="157" selection-start-line="227" selection-start-column="157" selection-end-line="227" selection-end-column="157" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../JoinTheFun/css/interestForm.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+          <caret line="391" column="0" selection-start-line="391" selection-start-column="0" selection-end-line="398" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/txct.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="502" column="0" selection-start-line="502" selection-start-column="0" selection-end-line="502" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tcmApplicationConfirm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.038462">
+          <caret line="86" column="50" selection-start-line="86" selection-start-column="50" selection-end-line="86" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../JoinTheFun_OS/confirmation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1923077">
+          <caret line="70" column="86" selection-start-line="70" selection-start-column="86" selection-end-line="70" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../JoinTheFun/confirmation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24744609">
+          <caret line="227" column="102" selection-start-line="227" selection-start-column="102" selection-end-line="227" selection-end-column="102" />
+          <folding>
+            <marker date="1441233217402" expanded="true" signature="3852:3961" placeholder="..." />
+            <marker date="1441233217402" expanded="true" signature="4013:4074" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

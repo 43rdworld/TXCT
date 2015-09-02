@@ -52,7 +52,7 @@
                 </div>
             </div>
         <!-- ## BEGIN FORM MAIN BODY ####################################################################################### -->
-            <form name="theForm" id="theForm" method="post" action="tcmApplicationConfirm.php" autocomplete="off">
+            <form name="theForm" id="theForm" method="post" action="tcmApplicationConfirm.php">
                 <div>
                     <!-- ## BEGIN PAGE 1 ############################################################################################### -->
                     <div class="no_js">
@@ -225,7 +225,7 @@
                             <div class="span-2"><p>&#32;</p></div>
                             <div class="span-5 textRight input"><label for="volIDType" id="volIDTypeLabel" ><span class="required">*</span>Identification Type: </label></div>
                             <div class="span-9 input">
-                                <select name="volIDType" ID="volIDType" class="form_Select200" tabindex="6" style="border:1px solid #bbb;">
+                                <select name="volIDType" ID="volIDType" class="form_Select200" tabindex="6" style="border:1px solid #bbb;" autocomplete="off">
                                     <option value="">- Select an ID type --</option>
                                     <option value="DL">Driver&#39;s license #</option>
                                     <option value="ID">State issued ID #</option>
@@ -376,7 +376,7 @@
                             <div class="span-24 formFieldSpacer">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
                             <div class="span-5 textRight input"><label for="volSignedName"><span class="required">*</span>Full Name: </label></div>
-                            <div class="span-9 input"><input type="text" name="volSignedName" id="volSignedName" class="form_Field275 textUppercase" tabindex="30" autocomplete="off" ></div>
+                            <div class="span-9 input"><input type="text" name="volSignedName" id="volSignedName" class="form_Field275" tabindex="30" autocomplete="off" ></div>
                             <div class="span-7"><div id="volSignedNameError" class="errorContainer"></div></div>
                             <div class="span-1 last">&#32;</div>
                             <div class="span-24 formFieldSpacer">&#32;</div>

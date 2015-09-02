@@ -141,6 +141,7 @@
     .input {padding:2px 0;}
     .textRight {text-align:right;}
     .textLeft {text-align:left;}
+    .textUppercase {text-transform:uppercase;}
 
 /* SPACING STYLES */
     .marginTop1 {margin-top:1px;}

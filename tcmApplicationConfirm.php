@@ -20,7 +20,7 @@
     if(isset($_SERVER['HTTP_REFERER'])) {
 //        echo "SUBMIT: HTTP REFERRER SET OK<br>";
         session_start();
-        require("i_PDOFunctions.php");
+        require("i_PDOFunctionsDev.php");
         require("includes/i_TCMSettings.php");
 //=	CHECK TO MAKE SURE THE SUBMIT IS COMING FROM THE PERMISSION FORM ===========================================================================================
         if(strtolower(returnPageName($_SERVER['HTTP_REFERER'])) == 'tcmapplication.php') {
@@ -31,11 +31,9 @@
                 $ipAddress = getIPAddr();
                 $connectionVar = 'GSNETX';
                 require("i_PDOConnection.php");												    //=	CREATES PDO DATA CONNECTION TO DATABASE
-                //	require_once('class.phpmailer.php');
                 require_once ('lib/swift_required.php');
-                echo "ID: ".returnRecordStatus ('EXEC sp_GetUserID :formSecret,:tableName','id',$dbh,$_POST["formSecret"],'tbl_TCT_TCMApplication') ."<Br>";
-                if (returnRecordStatus ('EXEC sp_GetTCMUserID :formSecret','id',$dbh,$_POST["formSecret"]) == '') {
-                    setVars('formSecret:str,volFName:str,volLName:str,volEmail:str,volPhone:str,volIDType:str,volID:str,volTroop:str,volSU:str,txt1:str,txt2:str,txt3:str,txt4:str,txt5:str,txt6:str,txt7:str,txt8:str,txt9:str,txt10:str,txt11:str,txt12:str,txt13:str,txt14:str,volSignedName:str,', 0, 1, 'TCM Application Form');
+                if (returnRecordStatus ('EXEC sp_GetUserID :tableName,:formSecret','id',$dbh,'tbl_TCT_TCMApplication',$_POST["formSecret"]) == '') {
+                    setVars('formSecret:str,volFName:str,volLName:str,volEmail:str,volPhone:str,volIDType:str,volID:str,volTroop:str,volSU:str,txt1:str,txt2:str,txt3:str,txt4:str,txt5:str,txt6:str,txt7:str,txt8:str,txt9:str,txt10:str,txt11:str,txt12:str,txt13:str,txt14:str,volSignedName:str', 0, 1, 'TCM Application Form');
                     $browserString = getBrowserInfo($_SERVER['HTTP_USER_AGENT']);
                     $arrBrowserString = explode(';', $browserString);
                     $pageTitle = "Troop Cookie Manager Application Form";
@@ -44,20 +42,10 @@
                     //= PROCESS DATA FROM FORM	====================================================================================================================
                     //= ONCE FORM HAS BEEN SUBMITTED WRITE THE ORDER INFORMATION TO THE DATABASE	                                                               =
                     //==============================================================================================================================================
-                    //$ckSQL = "select id,emailSent from tbl_TCT_TCMApplication where formSecret = '" . $formSecret . "'";
-                    //$result = odbc_exec($writeConn, $ckSQL);
-                    //$id = odbc_result($result, 'id');
-                    //$emailSent = odbc_result($result, 'emailSent');
-    //                echo "SQL: ".$ckSQL."<br>";
-    //                echo "<br>ID: ".$id."<br>";
-    //                echo "EMail Flag: ".$emailSent."<br>";
                     try {
                         //echo "<b>Submit to Database</b><br>";
                         $stmt = $dbh_write->prepare('
-                        EXEC sp_Save_TCT_TCMApplication @formSecret=:formSecret,@ipAddress=:ipAddress,@browser=:browser,@browserVersion=:browserVersion,@os=:os,@volFName=:volFName,@volLName=:volLName,@volEmail=:volEmail');
-                        //,@yos_AwardYears=:yos_AwardYears,@yos_PreviousAwardReceived=:yos_PreviousAwardReceived,@yos_WhichPreviousAward=:yos_WhichPreviousAward,@yos_StartMonth=:yos_StartMonth,@yos_StartYear=:yos_StartYear,@yos_PreviousAwardDocumentation=:yos_PreviousAwardDocumentation,@yos_NoPreviousAwardDocumentation=:yos_NoPreviousAwardDocumentation,@yos_PresentationLocation=:yos_PresentationLocation
-                        ////,@nomTroop=:nomTroop,@volAddress=:volAddress,@volAddress2=:volAddress2,@volCity=:volCity,@volZip=:volZip,@volCounty=:volCounty,
-                        ////,,@flyer=:flyer
+                        EXEC sp_Save_TCT_TCMApplication @formSecret=:formSecret,@ipAddress=:ipAddress,@browser=:browser,@browserVersion=:browserVersion,@os=:os,@volFName=:volFName,@volLName=:volLName,@volEmail=:volEmail,@volPhone=:volPhone,@volIDType=:volIDType,@volID=:volID,@volTroop=:volTroop,@volSU=:volSU,@txt1=:txt1,@txt2=:txt2,@txt3=:txt3,@txt4=:txt4,@txt5=:txt5,@txt6=:txt6,@txt7=:txt7,@txt8=:txt8,@txt9=:txt9,@txt10=:txt10,@txt11=:txt11,@txt12=:txt12,@txt13=:txt13,@txt14=:txt14,@volSignedName=:volSignedName');
                         $stmt->bindParam(':formSecret', $formSecret, PDO::PARAM_STR);
                         $stmt->bindParam(':ipAddress', $ipAddress, PDO::PARAM_STR);
                         $stmt->bindParam(':browser', $arrBrowserString[0], PDO::PARAM_STR);
@@ -66,9 +54,31 @@
                         $stmt->bindParam(':volFName', $volFName, PDO::PARAM_STR);
                         $stmt->bindParam(':volLName', $volLName, PDO::PARAM_STR);
                         $stmt->bindParam(':volEmail', $volEmail, PDO::PARAM_STR);
+                        $stmt->bindParam(':volPhone', $volPhone, PDO::PARAM_STR);
+                        $stmt->bindParam(':volIDType', $volIDType, PDO::PARAM_STR);
+                        $stmt->bindParam(':volID', $volID, PDO::PARAM_STR);
+                        $stmt->bindParam(':volTroop',$volTroop, PDO::PARAM_STR);
+                        $stmt->bindParam(':volSU',$volSU, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt1',$txt1, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt2',$txt2, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt3',$txt3, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt4',$txt4, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt5',$txt5, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt6',$txt6, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt7',$txt7, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt8',$txt8, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt9',$txt9, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt10',$txt10, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt11',$txt11, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt12',$txt12, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt13',$txt13, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt14',$txt14, PDO::PARAM_STR);
+                        $stmt->bindParam(':volSignedName',$volSignedName, PDO::PARAM_STR);
+
                         $stmt->execute();
-                        $stmt = null;
-                        $dbh = null;
+
+                        //$stmt = null;
+                        //$dbh = null;
                     } catch (Exception $dbError) {
 
                         echo "Error: " . $dbError . "<br>";
@@ -318,7 +328,7 @@
             </div>
             <div class="container">
                 <div id="footerWrapper">
-                    <div id="copyRight">&copy; <?php auto_copyright();?> Girl Scouts of Northeast Texasz</div>s
+                    <div id="copyRight">&copy; <?php auto_copyright();?> Girl Scouts of Northeast Texas</div>
                     <div id="socialMedia">
                         <a href="https://twitter.com/GSNETXcouncil" target="_blank"><img src="img/twitter_30_white.png" width="30" height="30" /></a>
                         <a href="https://www.facebook.com/GSNETX?ref=ts" target="_blank"><img src="img/facebook_30_white.png" width="30" height="30" /></a>

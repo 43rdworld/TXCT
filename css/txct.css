@@ -121,10 +121,10 @@
     .radioLabel {font-weight:normal;vertical-align:5%;}
     .form_Select70 {width:70px;}
     .form_Select150 {width:150px;padding:3px 4px;}
-    .form_Select200 {width:200px;padding:3px 4px;}
+    .form_Select200 {width:210px;padding:3px 4px;}
     .form_Select225 {width:225px;padding:3px 4px;}
     .form_Select250 {width:250px;padding:3px 4px;}
-    .form_Select300 {width:300px;padding:3px 4px;}
+    .form_Select300 {width:300px !important;padding:3px 4px;}
     .form_Select425 {width:425px;padding:3px 4px;}
     .form_Field50 {width:50px;padding:4px;}
     .form_Field75 {width:75px;padding:4px;}
@@ -141,6 +141,7 @@
     .input {padding:2px 0;}
     .textRight {text-align:right;}
     .textLeft {text-align:left;}
+    .textUppercase {text-transform:uppercase;}
 
 /* SPACING STYLES */
     .marginTop1 {margin-top:1px;}
@@ -357,6 +358,7 @@
     .span-20 span.select5 {padding-right:125px;}
     .span-20 span.select5:nth-child(4){padding-right:15px;}
     .formFieldSpacer {height:8px;}
+    .formFieldSpacer10 {height:10px;}
     .formFieldSpacer15 {height:15px;}
 
 /*= COMMON HEADER ============================================================================================================================================*/
@@ -461,7 +463,7 @@
     textarea.error:focus { border: 1px dotted #c00; font-size:.95em;padding:5px;background-color:#ffefef;}
     #permSU.error, #permSU.error:focus, #permGradLevel.error, #permGradLevel.error:focus, #permIDType.error, #permIDType.error:focus{ border: 1px dotted #c00; font-size:.95em;padding:3px 4px;background-color:#ffefef;}
 
-    #permGirlFName.valid, #permGirlLName.valid, #permGSTroop.valid, #permPackages.valid, #permMyEmail.valid, #permLeadEmail.valid, #permTCMEmail.valid,#permMyEmail2.valid, #permLeadEmail2.valid, #permTCMEmail2.valid,
+    #permGirlFName.valid, #permGirlLName.valid, #permGSTroop.valid, #permGSSU.valid, #permPackages.valid, #permMyEmail.valid, #permLeadEmail.valid, #permTCMEmail.valid,#permMyEmail2.valid, #permLeadEmail2.valid, #permTCMEmail2.valid,
     #perm1.valid, #perm2.valid, #perm3.valid, #perm4.valid, #perm5.valid, #permCClub.valid, #permCC1.valid,#permCC2.valid,#permCC3.valid,#permCC4.valid,
     #permParentFName.valid, #permParentLName.valid, #permID.valid, #permHomeAddress.valid, #permCity.valid, #permZip.valid, #permHomePhone.valid,
     #permCClub.valid, #permCC1.valid, #permCC2.valid, #permCC3.valid, #permCC4.valid, #permOption.valid, #permGradLevel.valid, #permSignedName.valid,
@@ -498,6 +500,17 @@
     .miniNav:hover {text-decoration:underline;color:#00a94f;}
 
 
+
+
+
+/*= FORM CONFIRMATION SCREEN MESSAGING ======================================================================================================================================*/
+    .errorWrapper{width:75%;margin:5% auto 10% auto;border:4px solid #933;font-size:1.3em;}
+    .dataWrapper {padding:1.25em 1.25em 1.8em 75pt;color:#933;line-height:2.2em;background:url('../img/icon_Dinosaur.png') no-repeat 1em 1em;font-size:11pt;}
+    .duplicateWrapper {width:75%;padding:1.25em 1.5em 1.8em 5.4em;line-height:1.8em;text-align:center;color:#933;background:url('../img/icon_TwoUsers.png') no-repeat 1em 1em;}
+    .brokenEmailWrapper {width:75%;padding:1.25em 1.5em 1.8em 7em;line-height:2.2em;text-align:center;color:#933;background:url('../img/icon_BrokenEmail.png') no-repeat 1.5em 1em;font-size:11pt;}
+    .formSubmittedWrapper p {margin:0 0 10px 0;padding:0;font-size:1.1em;}
+    .confirmationWrapper {width:60%;margin:5% auto 10% auto;font-size:1.3em;padding:1.25em 1.5em 1.8em 7.3em;line-height:1.7em;color:#444;background:url('../img/icon_gsArtProfile.png') no-repeat 1.5em 1.5em;}
+    .confirmationWrapper p {margin:10px 0;padding:0;}
 
 
 /*@charset "utf-8";*/

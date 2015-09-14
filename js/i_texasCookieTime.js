@@ -44,6 +44,31 @@
 		return xmlhttp;
 	}
 
+    //= FUNCTION TO RETURN THE RESULTS OF THE PASSED URL =========================================
+    function getTCTServiceUnit(strURL,theValue,theField) {
+        //alert(theValue);
+        var req = getXMLHTTP();
+        if (req) {
+            req.onreadystatechange = function() {
+                if (req.readyState == 4) {
+                    // only if "OK"
+                    if (req.status == 200) {
+                        if(theValue == 'value') {
+                            document.getElementById(theField).value=req.responseText;
+                        } else {
+                            document.getElementById(theField).innerHTML=req.responseText;
+                        }
+                    } else {
+                        alert("There was a problem while using XMLHTTP:\n" + req.statusText);
+                    }
+                }
+            }
+            req.open("GET", strURL, true);
+            req.send(null);
+        }
+    }
+
+
     function getPageName(url) {
         var index = url.lastIndexOf("/") + 1;
         var filenameWithExtension = url.substr(index);
@@ -51,84 +76,198 @@
         return filename;                                    // <-- added this line
     }
 
-//= FUNCTION TO SHOW REMAINING WORDS IN TEXTBOX
-//	var limit_zone = 10;
-//	$(function() {
-//		$.fn.limiter = function ( limit ) {
-//		  return this.each(function() {
-//			$(this).on('keyup focus', function() {
-//			  var chars = this.value.length;
-//			  if (chars > limit) {
-//				this.value = this.value.substr(0, limit);
-//				chars = limit;
-//			  }
-//			  var charsleft = limit - chars;
-//			  if (chars > limit_zone) {
-//				$('#accountNameChars span').html(charsleft).addClass('charsRemainAlert');
-//			  }
-//			  else {
-//				$('#accountNameChars span').html(charsleft).removeClass('charsRemainAlert');
-//			  }
-//			});
-//		  });
-//		};
-//	  $('#accountName').limiter(21);
-//	});
+    $(document).ready(function () {
+        var pageName = getPageName($(location).attr("href"))
+        //alert(pageName);
+    //= TCM APPLICATION SCRIPTS ===================================================================================================================================
+        if(pageName == 'tcmapplication') {
+            $("#volTroop").mask('**?***',{placeholder:''});
+            $("#volPhone").mask("(999) 999-9999");
+            //-INITIALS TO UPPER CASE ------------------------------------------------------------------------------------------------------------------------------
+            //for(var i=1;i<=15;i++) {
+            //    $('#txt'+i).keyup(function(){
+            //        this.value = this.value.toUpperCase();
+            //    });
+            //}
+        } else if (pageName == 'tcmApplicationConfirm') {
 
+    //= PARENT PERMISSION SCRIPTS ==================================================================================================================================
+        } else if (pageName == 'parentPermission' ) {
+            //alert(pageName);
+            $("#permGirlFName").focus();
+            $("#permGSTroop").mask('**?***',{placeholder:''});
+            $("#permPackages").mask('9?9999',{placeholder:''});
+            $("#permZip").mask("99999");
+            $("#permHomePhone").mask("(999) 999-9999");
+            $("#permCellPhone").mask("(999) 999-9999");
+            //-INITIALS TO UPPER CASE ------------------------------------------------------------------------------------------------------------------------------
+            //for(var i=1;i<=15;i++) {
+            //    $('#perm'+i).keyup(function(){
+            //        this.value = this.value.toUpperCase();
+            //    });
+            //}
+            //for(var i=1;i<=15;i++) {
+            //    $('#permCC'+i).keyup(function(){
+            //        this.value = this.value.toUpperCase();
+            //    });
+            //}
+            //MANAGE COOKIE CLUB OPTION ============================================================================================================================
+                $("#permCClubYes").click(function() {
+                    if($(this).is(':checked')) {
+                        $("#ccClubAcknowledgements").slideDown("slow","easeOutBounce");
+                    }
+                });
+                $("#permCClubNo").click(function() {
+                    if($(this).is(':checked')) {
+                        $('#ccClubAcknowledgements').slideUp('slow','easeOutBounce');
+                        $('#permCC1').val('').removeClass('valid').removeClass('error');
+                        $('#permCC2').val('').removeClass('valid').removeClass('error');
+                        $('#permCC3').val('').removeClass('valid').removeClass('error');
+                        $('#permCC4').val('').removeClass('valid').removeClass('error');
+                        $('#permCC1Error').empty();
+                        $('#permCC2Error').empty();
+                        $('#permCC3Error').empty();
+                        $('#permCC4Error').empty();
+                    }
+                });
 
-//= FUNCTION TO RETURN THE RESULTS OF THE PASSED URL =========================================
-//	function getTroopInfo(strURL,theField) {
-//	//alert('here');
-//		var req = getXMLHTTP();
-//		if (req) {
-//			req.onreadystatechange = function() {
-//				if (req.readyState == 4) {
-//					// only if "OK"
-//					if (req.status == 200) {
-//							document.getElementById(theField).innerHTML=req.responseText;
-//					} else {
-//						alert("There was a problem while using XMLHTTP:\n" + req.statusText);
-//					}
-//				}
-//			}
-//			req.open("GET", strURL, true);
-//			req.send(null);
-//		}
-//	}
+            //MANAGE CASH OPTION DROP DOWN =========================================================================================================================
+                $("#permOption").click(function() {
+                   if($(this).is(':checked')) {
+                       $('#pglWrapper').slideDown('slow','easeOutBounce');
+                   } else {
+                       $('#pglWrapper').slideUp('slow','easeOutBounce');
+                       $('#permGradeLevel').prop('selectedIndex', 0).removeClass('valid').removeClass('error');
+                       $('#permGradeLevelError').empty();
+                   }
+                })
+            //COPY EMAIL ADDRESSES FROM PARENT TO LEADER AND FROM LEADER TO TCM ====================================================================================
+                $("#permLeaderSame").click(function() {
+                    if($(this).is(':checked')) {
+                        $('#permLeadEmail').val($('#permMyEmail').val());
+                        $('#permLeadEmail2').val($('#permMyEmail2').val());
+                    } else {
+                        $('#permLeadEmail').val('').removeClass('valid').removeClass('error');
+                        $('#permLeadEmail2').val('').removeClass('valid').removeClass('error');
+                        $('#permLeadEmailError').empty();
+                        $('#permLeadEmail2Error').empty();
+                    }
+                })
 
-//= FUNCTION TO RETURN THE RESULTS OF THE PASSED URL =========================================
-//	function getRoutingNumberStatus(strURL,theField) {
-//	alert('From the function: '+strURL);
-//		var req = getXMLHTTP();
-//		if (req) {
-//			req.onreadystatechange = function() {
-//				if (req.readyState == 4) {
-////					// only if "OK"
-//					if (req.status == 200) {
-//						document.getElementById(theField).value=req.responseText;
-//					} else {
-//						alert("There was a problem while using XMLHTTP:\n" + req.statusText);
-//					}
-//				}
-//			}
-//			req.open("GET", strURL, true);
-//			req.send(null);
-//		}
-//	}
+                $("#permTCMSame").click(function() {
+                    if($(this).is(':checked')) {
+                        $('#permTCMEmail').val($('#permLeadEmail').val());
+                        $('#permTCMEmail2').val($('#permLeadEmail2').val());
+                    } else {
+                        $('#permTCMEmail').val('').removeClass('valid').removeClass('error');
+                        $('#permTCMEmail2').val('').removeClass('valid').removeClass('error');
+                        $('#permTCMEmailError').empty();
+                        $('#permTCMEmail2Error').empty();
+                    }
+                });
+        } else if (pageName == 'parentPermissionConfirm') {
 
+        } else if(pageName == 't2t') {
+            //alert('t2t');
+            $('#donorFName').focus();
+            $("#donorZip").mask("99999");
+            $("#donorPhone").mask("(999) 999-9999");
+            $("#t2tGSRefer").click(function() {
+                if($(this).is(':checked')) {
+                    $("#t2tTroopWrapper").slideDown("slow","easeOutBounce");
+                }
+            })
+            $("#t2tWebRefer").click(function() {
+                if($(this).is(':checked')) {
+                    $("#t2tTroopWrapper").slideUp("slow","easeOutBounce");
+                    $('#t2tReferringTroop').prop('selectedIndex', 0);
+                    $('#t2tReferringName').val("");
+                }
+            })
+            $("#t2tNewsRefer").click(function() {
+                if($(this).is(':checked')) {
+                    $("#t2tTroopWrapper").slideUp("slow","easeOutBounce");
+                    $('#t2tReferringTroop').prop('selectedIndex', 0);
+                    $('#t2tReferringName').val("");
+                }
+            })
+            $("#t2tOther").click(function() {
+                if($(this).is(':checked')) {
+                    $("#t2tTroopWrapper").slideUp("slow","easeOutBounce");
+                    $('#t2tReferringTroop').prop('selectedIndex', 0);
+                    $('#t2tReferringName').val("");
+                }
+            })
 
-	//function trim11 (str) {
-	//	str = str.replace(/^\s+/, '');
-	//	for (var i = str.length - 1; i >= 0; i--) {
-	//		if (/\S/.test(str.charAt(i))) {
-	//			str = str.substring(0, i + 1);
-	//			break;
-	//		}
-	//	}
-	//	return str;
-	//}
+        //= TROOP TO TROOP  FORM BILLING PAGE ======================================================================================================================
+        } else if(pageName == 't2t_Billing') {
+    //        alert('T2T Billing here');
+            $("#billingZip").mask("99999");
+            $("#billingPhone").mask("(999) 999-9999");
+            $("#billingSame").click(function() {
+                if($(this).is(':checked')) {
+                    $('#billingFName').val($("#donorFName").val());
+                    $('#billingLName').val($("#donorLName").val());
+                    $('#billingAddress').val($("#donorAddress").val());
+                    $('#billingAddress2').val($("#donorAddress2").val());
+                    $('#billingCity').val($("#donorCity").val());
+                    $('#billingState').val($("#donorState").val());
+                    $('#billingZip').val($("#donorZip").val());
+                    $('#billingPhone').val($("#donorPhone").val());
+                    $('#billingEmail').val($("#donorEmail").val());
+                } else {
+                    $('#billingFName').val("");
+                    $('#billingLName').val("");
+                    $('#billingAddress').val("");
+                    $('#billingAddress2').val("");
+                    $('#billingCity').val("");
+                    $('#billingState').val("");
+                    $('#billingZip').val("");
+                    $('#billingPhone').val("");
+                    $('#billingEmail').val("");
+                }
+            });
+            //= REMOVING THE CHECK FROM THE REGISTRATION AND BILLING CHECKBOX IF INFORMATION CHANGES ===============================================================
+            var a = $("#billingFName");
+            var b = $("#billingLName");
+            var c = $("#billingAddress");
+            var d = $("#billingAddress2");
+            var e = $("#billingCity");
+            var f = $("#billingState");
+            var g = $("#billingZip");
+            var h = $("#billingPhone");
+            var i = $("#billingEmail");
+            $(a.selector+", "+ b.selector+", "+ c.selector+", "+ d.selector+", "+ e.selector+", "+ f.selector+", "+ g.selector+", "+ h.selector+", "+ i.selector).change(function() {
+                $("#billingSame").attr("checked", false);
+            })
 
-$(document).ready(function () {
+            //= CREDIT CARD IMAGE DIMMER
+            $('#ccNum').change(function(e){
+                //alert(this.value.slice(0,2));
+                if(/^4/.test(this.value.slice(0, 2))) {							//=CHECK FOR VISA
+                    $('#ccBox').css('background-position', '0 -23px');
+                    $('#ccType').val('v');
+                //    alert( $('#ccType').val());
+                } else if (/^5[1-5]/.test(this.value.slice(0, 2))) {            //=CHECK FOR MC
+                    $('#ccBox').css('background-position', '0 -46px');
+                    $('#ccType').val('m');
+                } else if (/^3[47]/.test(this.value.slice(0, 2))) {             //=CHECK FOR AMEX
+                    $('#ccBox').css('background-position', '0 -69px');
+                    $('#ccType').val('a');
+                } else if (/^6(?:011)/.test(this.value.slice(0, 4))) {          //=CHECK FOR DISCOVER
+                    $('#ccBox').css('background-position', '0 -92px');
+                    $('#ccType').val('d');
+                } else if (/^6(?:5)/.test(this.value.slice(0, 2))) {            //=CHECK FOR DISCOVER
+                    $('#ccBox').css('background-position', '0 -92px');
+                    $('#ccType').val('d');
+                } else {
+                    $('#ccBox').css('background-position', '0 0');	       //=RESET IMAGES
+                    $('#ccType').val('');
+                }
+            });
+
+        }
+    });
 
 //
 ////  OFR REPORT FORM ============================
@@ -224,204 +363,10 @@ $(document).ready(function () {
 //           $('#pglWrapper').slideDown("slow","easeOutBounce");
 //        } else {
 //            $('#pglWrapper').slideUp("slow","easeOutBounce");
-//            $('#permGradLevel').prop('selectedIndex',0);
-//            $('#permGradLevel').attr('class','form_Select250 normal');
+//            $('#permGradeLevel').prop('selectedIndex',0);
+//            $('#permGradeLevel').attr('class','form_Select250 normal');
 //        }
 //    })
-
-
-    var pageName = getPageName($(location).attr("href"))
-    //alert(pageName);
- //= TCM APPLICATION SCRIPTS ===================================================================================================================================
-    if(pageName == 'tcmApplication') {
-        $("#volTroop").mask('**?***',{placeholder:''});
-        $("#volPhone").mask("(999) 999-9999");
-        //-INITIALS TO UPPER CASE ------------------------------------------------------------------------------------------------------------------------------
-        for(var i=1;i<=15;i++) {
-            $('#txt'+i).keyup(function(){
-                this.value = this.value.toUpperCase();
-            });
-        }
-    } else if (pageName == 'tcmApplicationConfirm') {
-
-//= PARENT PERMISSION SCRIPTS ==================================================================================================================================
-    } else if (pageName == 'parentPermission' ) {
-        //alert(pageName);
-        $("#permGirlFName").focus();
-        $("#permGSTroop").mask('**?***',{placeholder:''});
-        $("#permPackages").mask('9?9999',{placeholder:''});
-        $("#permZip").mask("99999");
-        $("#permHomePhone").mask("(999) 999-9999");
-        $("#permCellPhone").mask("(999) 999-9999");
-        //-INITIALS TO UPPER CASE ------------------------------------------------------------------------------------------------------------------------------
-        for(var i=1;i<=15;i++) {
-            $('#perm'+i).keyup(function(){
-                this.value = this.value.toUpperCase();
-            });
-        }
-        for(var i=1;i<=15;i++) {
-            $('#permCC'+i).keyup(function(){
-                this.value = this.value.toUpperCase();
-            });
-        }
-        //MANAGE COOKIE CLUB OPTION ============================================================================================================================
-            $("#permCClubYes").click(function() {
-                if($(this).is(':checked')) {
-                    $("#ccClubAcknowledgements").slideDown("slow","easeOutBounce");
-                }
-            });
-            $("#permCClubNo").click(function() {
-                if($(this).is(':checked')) {
-                    $('#ccClubAcknowledgements').slideUp('slow','easeOutBounce');
-                    $('#permCC1').val('').removeClass('valid').removeClass('error');
-                    $('#permCC2').val('').removeClass('valid').removeClass('error');
-                    $('#permCC3').val('').removeClass('valid').removeClass('error');
-                    $('#permCC4').val('').removeClass('valid').removeClass('error');
-                    $('#permCC1Error').empty();
-                    $('#permCC2Error').empty();
-                    $('#permCC3Error').empty();
-                    $('#permCC4Error').empty();
-                }
-            });
-
-        //MANAGE CASH OPTION DROP DOWN =========================================================================================================================
-            $("#permOption").click(function() {
-               if($(this).is(':checked')) {
-                   $('#pglWrapper').slideDown('slow','easeOutBounce');
-               } else {
-                   $('#pglWrapper').slideUp('slow','easeOutBounce');
-                   $('#permGradLevel').prop('selectedIndex', 0).removeClass('valid').removeClass('error');
-                   $('#permGradLevelError').empty();
-               }
-            })
-		//COPY EMAIL ADDRESSES FROM PARENT TO LEADER AND FROM LEADER TO TCM ====================================================================================
-            $("#permLeaderSame").click(function() {
-                if($(this).is(':checked')) {
-                    $('#permLeadEmail').val($('#permMyEmail').val());
-                    $('#permLeadEmail2').val($('#permMyEmail2').val());
-                } else {
-				    $('#permLeadEmail').val('').removeClass('valid').removeClass('error');
-                    $('#permLeadEmail2').val('').removeClass('valid').removeClass('error');
-					$('#permLeadEmailError').empty();
-					$('#permLeadEmail2Error').empty();
-				}
-            })
-
-            $("#permTCMSame").click(function() {
-                if($(this).is(':checked')) {
-                    $('#permTCMEmail').val($('#permLeadEmail').val());
-                    $('#permTCMEmail2').val($('#permLeadEmail2').val());
-                } else {
-				    $('#permTCMEmail').val('').removeClass('valid').removeClass('error');
-                    $('#permTCMEmail2').val('').removeClass('valid').removeClass('error');
-					$('#permTCMEmailError').empty();
-					$('#permTCMEmail2Error').empty();
-				}
-            });
-    } else if (pageName == 'parentPermissionConfirm') {
-
-    } else if(pageName == 't2t') {
-        //alert('t2t');
-        $('#donorFName').focus();
-        $("#donorZip").mask("99999");
-        $("#donorPhone").mask("(999) 999-9999");
-        $("#t2tGSRefer").click(function() {
-            if($(this).is(':checked')) {
-                $("#t2tTroopWrapper").slideDown("slow","easeOutBounce");
-            }
-        })
-        $("#t2tWebRefer").click(function() {
-            if($(this).is(':checked')) {
-                $("#t2tTroopWrapper").slideUp("slow","easeOutBounce");
-                $('#t2tReferringTroop').prop('selectedIndex', 0);
-                $('#t2tReferringName').val("");
-            }
-        })
-        $("#t2tNewsRefer").click(function() {
-            if($(this).is(':checked')) {
-                $("#t2tTroopWrapper").slideUp("slow","easeOutBounce");
-                $('#t2tReferringTroop').prop('selectedIndex', 0);
-                $('#t2tReferringName').val("");
-            }
-        })
-        $("#t2tOther").click(function() {
-            if($(this).is(':checked')) {
-                $("#t2tTroopWrapper").slideUp("slow","easeOutBounce");
-                $('#t2tReferringTroop').prop('selectedIndex', 0);
-                $('#t2tReferringName').val("");
-            }
-        })
-
-    //= TROOP TO TROOP  FORM BILLING PAGE ======================================================================================================================
-    } else if(pageName == 't2t_Billing') {
-//        alert('T2T Billing here');
-        $("#billingZip").mask("99999");
-        $("#billingPhone").mask("(999) 999-9999");
-        $("#billingSame").click(function() {
-            if($(this).is(':checked')) {
-                $('#billingFName').val($("#donorFName").val());
-                $('#billingLName').val($("#donorLName").val());
-                $('#billingAddress').val($("#donorAddress").val());
-                $('#billingAddress2').val($("#donorAddress2").val());
-                $('#billingCity').val($("#donorCity").val());
-                $('#billingState').val($("#donorState").val());
-                $('#billingZip').val($("#donorZip").val());
-                $('#billingPhone').val($("#donorPhone").val());
-                $('#billingEmail').val($("#donorEmail").val());
-            } else {
-                $('#billingFName').val("");
-                $('#billingLName').val("");
-                $('#billingAddress').val("");
-                $('#billingAddress2').val("");
-                $('#billingCity').val("");
-                $('#billingState').val("");
-                $('#billingZip').val("");
-                $('#billingPhone').val("");
-                $('#billingEmail').val("");
-            }
-        });
-        //= REMOVING THE CHECK FROM THE REGISTRATION AND BILLING CHECKBOX IF INFORMATION CHANGES ===============================================================
-        var a = $("#billingFName");
-        var b = $("#billingLName");
-        var c = $("#billingAddress");
-        var d = $("#billingAddress2");
-        var e = $("#billingCity");
-        var f = $("#billingState");
-        var g = $("#billingZip");
-        var h = $("#billingPhone");
-        var i = $("#billingEmail");
-        $(a.selector+", "+ b.selector+", "+ c.selector+", "+ d.selector+", "+ e.selector+", "+ f.selector+", "+ g.selector+", "+ h.selector+", "+ i.selector).change(function() {
-            $("#billingSame").attr("checked", false);
-        })
-
-        //= CREDIT CARD IMAGE DIMMER
-        $('#ccNum').change(function(e){
-    		//alert(this.value.slice(0,2));
-            if(/^4/.test(this.value.slice(0, 2))) {							//=CHECK FOR VISA
-                $('#ccBox').css('background-position', '0 -23px');
-                $('#ccType').val('v');
-            //    alert( $('#ccType').val());
-            } else if (/^5[1-5]/.test(this.value.slice(0, 2))) {            //=CHECK FOR MC
-                $('#ccBox').css('background-position', '0 -46px');
-                $('#ccType').val('m');
-            } else if (/^3[47]/.test(this.value.slice(0, 2))) {             //=CHECK FOR AMEX
-                $('#ccBox').css('background-position', '0 -69px');
-                $('#ccType').val('a');
-            } else if (/^6(?:011)/.test(this.value.slice(0, 4))) {          //=CHECK FOR DISCOVER
-                $('#ccBox').css('background-position', '0 -92px');
-                $('#ccType').val('d');
-            } else if (/^6(?:5)/.test(this.value.slice(0, 2))) {            //=CHECK FOR DISCOVER
-                $('#ccBox').css('background-position', '0 -92px');
-                $('#ccType').val('d');
-            } else {
-                $('#ccBox').css('background-position', '0 0');	       //=RESET IMAGES
-                $('#ccType').val('');
-            }
-        });
-
-    }
-
-
 
     //}
     ////= T@T REVIEW PAGE - DISPLAY PORTION
@@ -588,7 +533,85 @@ $(document).ready(function () {
 //		$("#ccCVV2Temp").keyup(function () {
 //			$("#ccCVV2").val($(this).val());
 //		});
-});
+//= FUNCTION TO SHOW REMAINING WORDS IN TEXTBOX
+//	var limit_zone = 10;
+//	$(function() {
+//		$.fn.limiter = function ( limit ) {
+//		  return this.each(function() {
+//			$(this).on('keyup focus', function() {
+//			  var chars = this.value.length;
+//			  if (chars > limit) {
+//				this.value = this.value.substr(0, limit);
+//				chars = limit;
+//			  }
+//			  var charsleft = limit - chars;
+//			  if (chars > limit_zone) {
+//				$('#accountNameChars span').html(charsleft).addClass('charsRemainAlert');
+//			  }
+//			  else {
+//				$('#accountNameChars span').html(charsleft).removeClass('charsRemainAlert');
+//			  }
+//			});
+//		  });
+//		};
+//	  $('#accountName').limiter(21);
+//	});
+
+
+//= FUNCTION TO RETURN THE RESULTS OF THE PASSED URL =========================================
+//	function getTroopInfo(strURL,theField) {
+//	//alert('here');
+//		var req = getXMLHTTP();
+//		if (req) {
+//			req.onreadystatechange = function() {
+//				if (req.readyState == 4) {
+//					// only if "OK"
+//					if (req.status == 200) {
+//							document.getElementById(theField).innerHTML=req.responseText;
+//					} else {
+//						alert("There was a problem while using XMLHTTP:\n" + req.statusText);
+//					}
+//				}
+//			}
+//			req.open("GET", strURL, true);
+//			req.send(null);
+//		}
+//	}
+
+//= FUNCTION TO RETURN THE RESULTS OF THE PASSED URL =========================================
+//	function getRoutingNumberStatus(strURL,theField) {
+//	alert('From the function: '+strURL);
+//		var req = getXMLHTTP();
+//		if (req) {
+//			req.onreadystatechange = function() {
+//				if (req.readyState == 4) {
+////					// only if "OK"
+//					if (req.status == 200) {
+//						document.getElementById(theField).value=req.responseText;
+//					} else {
+//						alert("There was a problem while using XMLHTTP:\n" + req.statusText);
+//					}
+//				}
+//			}
+//			req.open("GET", strURL, true);
+//			req.send(null);
+//		}
+//	}
+
+
+    //function trim11 (str) {
+    //	str = str.replace(/^\s+/, '');
+    //	for (var i = str.length - 1; i >= 0; i--) {
+    //		if (/\S/.test(str.charAt(i))) {
+    //			str = str.substring(0, i + 1);
+    //			break;
+    //		}
+    //	}
+    //	return str;
+    //}
+
+
+
 
 
 

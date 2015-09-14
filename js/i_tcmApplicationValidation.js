@@ -36,8 +36,7 @@ $(document).ready(function () {
                },
                     volTroop: {
                     required: true,
-                   minlength: 3,
-                      remote: {url: "includes/i_tcmApplicationValidate.php", async: false}
+                      //remote: {url: "includes/i_tcmApplicationValidate.php", async: false}
                },
                        volSU: {
                     required: true
@@ -208,8 +207,7 @@ $(document).ready(function () {
             },
                     volTroop: {
                     required: "* Troop number is required",
-                   minlength: "* Must be at least 3 characters",
-                      remote: "* Must be at least 3 characters"
+                      //remote: "* Must be at least 3 characters"
             },
                        volSU: {
                     required: "* Service Unit is required"
@@ -239,7 +237,6 @@ $(document).ready(function () {
                      equalTo: "* Initials must match",
                       remote: "* Please enter your initials"
             },
-
                         txt6: {
                     required: "* Please enter your initials",
                      equalTo: "* Initials must match",

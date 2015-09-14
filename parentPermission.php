@@ -5,43 +5,29 @@
     header('X-UA-Compatible: IE=edge,chrome=1');
     header('Cache-Control: max-age=30, must-revalidate');
     ini_set("display_errors", 1);
-    $conn = '';
-
-    if($_SERVER['COMPUTERNAME'] == 'RODBY') {
-        $connectionVar = 'GSNETX';
-    } else if ($_SERVER['COMPUTERNAME'] == 'V-WWW04-WEBER') {
-
-    }
-    require("i_ODBC_Connection.php");								//=	CREATES DATA CONNECTION TO DATABASE
-    require("i_ODBC_Functions.php");								//= LOAD FORM FUNCTIONS
+    require("i_PDOConnection.php");								    //=	CREATES DATA CONNECTION TO DATABASE
+    require("i_PDOFunctions.php");								    //= LOAD FORM FUNCTIONS
     require("includes/i_ParentPermissionSettings.php");
     session_start();												//= START SESSION TO PREVENT RE-SUBMITTING FORM
     $formSecret=md5(uniqid(rand(), true));							//= SET SECRET NUMBER TO USE IN DUPLICATE SUBMISSION DETECTION
-
-//    if(!ISSET($_SESSION['formSecret'])) {
-//        $_SESSION['formSecret'] = $formSecret;
-//    }
+    //    echo "SECRET: ".$formSecret."<br>";
+    //    if(!ISSET($_SESSION['formSecret'])) {
+    //        $_SESSION['formSecret'] = $formSecret;
+    //    }
 ?>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Parent/Guardian Permission and Responsibility Registration Form</title>
-        <meta charset="UTF-8">
+        <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
         <link href="css/txct.css" rel="stylesheet" type="text/css" />
-        <script src="//code.jquery.com/jquery-latest.min.js" ></script>
-        <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
-        <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/additional-methods.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
-        <script src="js/vendors/jquery.maskedinput.js"></script>
-        <script src="js/vendors/jquery.maskMoney.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
         <script src="js/vendors/modernizr.js"></script>
-        <script src="js/i_texasCookieTime.js" type="text/javascript"></script>
-        <script src="js/i_parentPermissionValidation.js" type="text/javascript"></script>
     </head>
-    <body onload="copyFormSecret('<?php echo $formSecret;?>');">
+    <body onload="copyFormSecret('<?php echo $formSecret;?>');focusIt('permGirlFName')">
         <div>
-             <div class="container" style="position:relative;background-color:#00ae58;">
-                <div class="span-7"><img src="img/gsnetxLogo_White.png" width="225" height="96" alt="Girl Scouts of Northeast Texas" id="gsnetxLogo" /></div>
+            <div class="container" style="position:relative;background-color:#00ae58;">
+                <div class="span-7"><a href="http://www.gsnetx.org"><img src="img/gsnetxLogo_White.png" width="225" height="96" alt="Girl Scouts of Northeast Texas" id="gsnetxLogo" /></a></div>
                 <div class="span-17 last">
                     <div id="searchWrapper">
                         <div id="eyebrow">
@@ -66,7 +52,10 @@
                     </div>
                 </div>
             </div>
-        <!-- ## BEGIN FORM MAIN BODY ####################################################################################### -->
+
+
+
+            <!-- ## BEGIN FORM MAIN BODY ####################################################################################### -->
             <form name="theForm" id="theForm" method="post" action="parentPermissionConfirm.php" autocomplete="off">
                 <div>
                     <!-- ## BEGIN PAGE 1 ############################################################################################### -->
@@ -169,14 +158,18 @@
                             <div class="span-24 formFieldSpacer">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
                             <div class="span-5 textRight input"><label for="permGSTroop" id="permGSTroopLabel"><span class="required">*</span>Troop Number:</label></div>
-                            <div class="span-7 input"><input type="text" id="permGSTroop" name="permGSTroop" class="form_Field50" tabindex="3" autocomplete="off" maxlength="5" />&nbsp;&nbsp;<span class="formNote">(5 character maximum)</span></div>
+                            <div class="span-7 input"><?php echo getSelectList($dbh,'permGSTroop','permGSTroop','sp_GetTroopNumbers_List 2015,null','form_Select200','Select your Troop Number --','troop_number,null,troop_number,null','style="padding:3px 4px;border:1px solid #999;"','onchange="getTCTServiceUnit(\'getTCTSU.php?troopNum=\'+this.value,\'innerHTML\',\'serviceUnitDiv\');"','id:null',9,null,null,null,null,null,null,null,null,null);?></div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-7"><div id="permGSTroopError" class="errorContainer"></div></div>
-                            <div class="span-1 last">&#32;</div>
+                            <div class="span-6"><div id="permGSTroopError" class="errorContainer"></div></div>
+                            <div class="span-2 last">&#32;</div>
                             <div class="span-24 formFieldSpacer">&#32;</div>
+                            <!-- *********************************************************************** -->
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-5 textRight input"><label for="permSU" id="permSULabel">GS Service Unit:</label></div>
-                            <div class="span-7 input"><?php echo getSelectList($conn,'permSU','permSU','sp_GetCookieServiceUnitList','form_Select300','Select your ServiceUnit --','suNum,null,suNum,suCity','style="padding:3px 4px;border:1px solid #999;"',null,'id:null',4,null,null,null,null,null,null,null,null,null);?></div>
+                            <div class="span-5 textRight input"><label for="permSU" id="permSULabel"><span class="required">*</span>GS Service Unit:</label></div>
+                            <div class="span-7 input" id="serviceUnitDiv">
+                                <select class"form_Select300" name="permSU" id="permSU" tabIndex="9" style="width:300px;"><option value="">Select your Service Unit --</option></select>
+                                <?php //echo getSelectList($dbh,'volSU','volSU','sp_GetTCTServiceUnit_List 2015,null','form_Select300','Select your Service Unit --','su_Number,null,su_Number,su_AreaNames','style="padding:3px 4px;border:1px solid #999;"',null,'id:null',9,null,null,null,null,null,null,null,null,null);?>
+                            </div>
                             <div class="span-2"><p>&#32;</p></div>
                             <div class="span-6"><div id="permSUError" class="errorContainer"></div></div>
                             <div class="span-2 last">&#32;</div>
@@ -272,13 +265,13 @@
                             <div class="span-3 last">&#32;</div>
                             <div class="span-24 formFieldSpacer">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-5 textRight input"><input type="text" name="perm1" id="perm1" class="form_Field50 padding2 textCenter" tabindex="14" autocomplete="off" maxlength="4" /></div>
+                            <div class="span-5 textRight input"><input type="text" name="perm1" id="perm1" class="form_Field50 padding2 textCenter textUppercase" tabindex="14" autocomplete="off" maxlength="4" /></div>
                             <div class="span-9"><div class="t1a"><label for="perm1" class="labelNormal">I agree to accept <span class="boldUnderline">full</span> financial responsibility for all cookies and money my Girl Scout receives.</label></div></div>
                             <div class="span-6"><div id="perm1Error" class="errorContainer"></div></div>
                             <div class="span-2 last">&#32;</div>
                             <div class="span-24 formFieldSpacer">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-5 textRight input"><input type="text" name="perm2" id="perm2" class="form_Field50 padding2 textCenter" tabindex="15" autocomplete="off" maxlength="4" style="vertical-align:top;" /></div>
+                            <div class="span-5 textRight input"><input type="text" name="perm2" id="perm2" class="form_Field50 padding2 textCenter textUppercase" tabindex="15" autocomplete="off" maxlength="4" style="vertical-align:top;" /></div>
                             <div class="span-9">
                                 <div class="t1a">
                                     <label for="perm2" class="labelNormal">I will see that:</label>
@@ -293,19 +286,19 @@
                             <div class="span-2 last">&#32;</div>
                             <div class="span-24 formFieldSpacer">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-5 textRight input"><input type="text" name="perm3" id="perm3" class="form_Field50 padding2 textCenter" tabindex="16" autocomplete="off" maxlength="4" /></div>
+                            <div class="span-5 textRight input"><input type="text" name="perm3" id="perm3" class="form_Field50 padding2 textCenter textUppercase" tabindex="16" autocomplete="off" maxlength="4" /></div>
                             <div class="span-9"><div class="t1a"><label for="perm3" class="labelNormal">I understand that payments for the cookies need to be made as set by my Troop Leader and Troop Cookie Manager/Leader with the final payment made balance by the end of the Cookie Program or an Outstanding Funds Report will be completed for the balance due amount outstanding and Girl Scouts of Northeast Texas will take collection action.</label></div></div>
                             <div class="span-6"><div id="perm3Error" class="errorContainer"></div></div>
                             <div class="span-2 last">&#32;</div>
                             <div class="span-24 formFieldSpacer">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-5 textRight input"><input type="text" name="perm4" id="perm4" class="form_Field50 padding2 textCenter" tabindex="17" autocomplete="off" maxlength="4" /></div>
+                            <div class="span-5 textRight input"><input type="text" name="perm4" id="perm4" class="form_Field50 padding2 textCenter textUppercase" tabindex="17" autocomplete="off" maxlength="4" /></div>
                             <div class="span-9"><div class="t1a"><label for="perm4" class="labelNormal">I understand that all cookies ordered by my Girl Scout are considered sold and may not be returned.</label></div></div>
                             <div class="span-6"><div id="perm4Error" class="errorContainer"></div></div>
                             <div class="span-2 last">&#32;</div>
                             <div class="span-24 formFieldSpacer">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-5 textRight input"><input type="text" name="perm5" id="perm5" class="form_Field50 padding2 textCenter" tabindex="18" autocomplete="off" maxlength="4" /></div>
+                            <div class="span-5 textRight input"><input type="text" name="perm5" id="perm5" class="form_Field50 padding2 textCenter textUppercase" tabindex="18" autocomplete="off" maxlength="4" /></div>
                             <div class="span-9"><div class="t1a"><label for="perm5" class="labelNormal">I understand girl reward items are ordered only for eligible girls whose full balance is paid by the end of the program. I understand if money is not received on time, my Girl Scout <span class="boldUnderline">will not</span> receive reward items.</label></div></div>
                             <div class="span-6"><div id="perm5Error" class="errorContainer"></div></div>
                             <div class="span-2 last">&#32;</div>
@@ -335,25 +328,25 @@
                             <div class="span-24 formFieldSpacer">&#32;</div>
                             <div  class="span-24" id="ccClubAcknowledgements" style="display:none;">
                                 <div class="span-2"><p>&#32;</p></div>
-                                <div class="span-5 textRight input"><input type="text" name="permCC1" id="permCC1" class="form_Field50 padding2 textCenter" tabindex="20" autocomplete="off" maxlength="4" /></div>
+                                <div class="span-5 textRight input"><input type="text" name="permCC1" id="permCC1" class="form_Field50 padding2 textCenter textUppercase" tabindex="20" autocomplete="off" maxlength="4" /></div>
                                 <div class="span-9"><div class="t1b"><label for="permCC1" class="labelNormal">I understand that online payment for cookies is not allowed.</label></div></div>
                                 <div class="span-6"><div id="permCC1Error" class="errorContainer"></div></div>
                                 <div class="span-2 last">&#32;</div>
                                 <div class="span-24 formFieldSpacer">&#32;</div>
                                 <div class="span-2"><p>&#32;</p></div>
-                                <div class="span-5 textRight input"><input type="text" name="permCC2" id="permCC2" class="form_Field50 padding2 textCenter" tabindex="21" autocomplete="off" maxlength="4" /></div>
+                                <div class="span-5 textRight input"><input type="text" name="permCC2" id="permCC2" class="form_Field50 padding2 textCenter textUppercase" tabindex="21" autocomplete="off" maxlength="4" /></div>
                                 <div class="span-9"><div class="t1b"><label for="permCC2" class="labelNormal">I understand that it is my responsibility to review my Girl Scout’s Cookie Club “promises” to ensure they are genuine orders from customers.</label></div></div>
                                 <div class="span-6"><div id="permCC2Error" class="errorContainer"></div></div>
                                 <div class="span-2 last">&#32;</div>
                                 <div class="span-24 formFieldSpacer">&#32;</div>
                                 <div class="span-2"><p>&#32;</p></div>
-                                <div class="span-5 textRight input"><input type="text" name="permCC3" id="permCC3" class="form_Field50 padding2 textCenter" tabindex="22" autocomplete="off" maxlength="4" /></div>
+                                <div class="span-5 textRight input"><input type="text" name="permCC3" id="permCC3" class="form_Field50 padding2 textCenter textUppercase" tabindex="22" autocomplete="off" maxlength="4" /></div>
                                 <div class="span-9"><div class="t1b"><label for="permCC3" class="labelNormal">I understand that my Girl Scout&#39;s personal email information should not be provided to the customer.</label></div></div>
                                 <div class="span-6"><div id="permCC3Error" class="errorContainer"></div></div>
                                 <div class="span-2 last">&#32;</div>
                                 <div class="span-24 formFieldSpacer">&#32;</div>
                                 <div class="span-2"><p>&#32;</p></div>
-                                <div class="span-5 textRight input"><input type="text" name="permCC4" id="permCC4" class="form_Field50 padding2 textCenter" tabindex="23" autocomplete="off" maxlength="4" /></div>
+                                <div class="span-5 textRight input"><input type="text" name="permCC4" id="permCC4" class="form_Field50 padding2 textCenter textUppercase" tabindex="23" autocomplete="off" maxlength="4" /></div>
                                 <div class="span-9"><div class="t1b"><label for="permCC4" class="labelNormal">I support my Girl Scout in using the Cookie Club online goal-setting and email tools through Cookie Club.</label></div></div>
                                 <div class="span-6"><div id="permCC4Error" class="errorContainer"></div></div>
                                 <div class="span-2 last">&#32;</div>
@@ -463,16 +456,16 @@
                             <div class="span-24 formFieldSpacer">&#32;</div>
                             <div  class="span-24" id="pglWrapper" style="display:none;">
                                 <div class="span-2"><p>&#32;</p></div>
-                                <div class="span-5 textRight input"><label for="permGradLevel" id="permGradLevelLabel"><span class="required">*</span>Program Grade Level: </label></div>
+                                <div class="span-5 textRight input"><label for="permGradeLevel" id="permGradeLevelLabel"><span class="required">*</span>Program Grade Level: </label></div>
                                 <div class="span-9 input">
-                                    <select name="permGradLevel" id="permGradLevel" class="form_Select300" tabindex="35">
+                                    <select name="permGradeLevel" id="permGradeLevel" class="form_Select300" tabindex="35">
                                         <option value="">- Select Program Grade Level --</option>
                                         <option value="Cadette">Cadette Girl Scouts: 6th grade- 8th grade</option>
                                         <option value="Senior">Senior Girl Scouts: 9th grade-10th grade</option>
                                         <option value="Ambassador">Ambassador Girl Scouts: 11th grade-12th grade</option>
                                     </select>
                                 </div>
-                                <div class="span-7"><div id="permGradLevelError" class="errorContainer"></div></div>
+                                <div class="span-7"><div id="permGradeLevelError" class="errorContainer"></div></div>
                                 <div class="span-1 last">&#32;</div>
                             </div>
                             <div class="span-24 formFieldSpacer">&#32;</div>
@@ -537,5 +530,12 @@
                 </div>
             </form>
         </div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+        <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.js"></script>
+        <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/additional-methods.js"></script>
+        <script src="js/vendors/jquery.maskedinput.js"></script>
+        <script src="js/i_texasCookieTime.js" type="text/javascript"></script>
+        <script src="js/i_parentPermissionValidation.js" type="text/javascript"></script>
     </body>
 </html>

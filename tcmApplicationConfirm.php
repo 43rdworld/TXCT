@@ -31,11 +31,11 @@
                 $ipAddress = getIPAddr();
                 $connectionVar = 'GSNETX';
                 require("i_PDOConnection.php");												    //=	CREATES PDO DATA CONNECTION TO DATABASE
-                //	require_once('class.phpmailer.php');
                 require_once ('lib/swift_required.php');
-                echo "ID: ".returnRecordStatus ('EXEC sp_GetUserID :formSecret,:tableName','id',$dbh,$_POST["formSecret"],'tbl_TCT_TCMApplication') ."<Br>";
-                if (returnRecordStatus ('EXEC sp_GetTCMUserID :formSecret','id',$dbh,$_POST["formSecret"]) == '') {
-                    setVars('formSecret:str,volFName:str,volLName:str,volEmail:str,volPhone:str,volIDType:str,volID:str,volTroop:str,volSU:str,txt1:str,txt2:str,txt3:str,txt4:str,txt5:str,txt6:str,txt7:str,txt8:str,txt9:str,txt10:str,txt11:str,txt12:str,txt13:str,txt14:str,volSignedName:str,', 0, 1, 'TCM Application Form');
+                //echo "ID: ".returnRegistrationStatus ('EXEC sp_GetUserID :tableName,:formSecret','id',$dbh,'tbl_TCT_TCMApplication',$_POST["formSecret"]);
+                if (returnRegistrationStatus ($dbh,'EXEC sp_GetUserID :tableName,:formSecret','id','tbl_TCT_TCMApplication',$_POST["formSecret"]) != 'zzz') {
+                    setVars('formSecret:str,volFName:str,volLName:str,volEmail:str,volPhone:str,volIDType:str,volID:str,volTroop:str,volSU:str,txt1:str,txt2:str,txt3:str,txt4:str,txt5:str,txt6:str,txt7:str,txt8:str,txt9:str,txt10:str,txt11:str,txt12:str,txt13:str,txt14:str,volSignedName:str', 0, 1, 'TCM Application Form');
+                    $dbFields = array("formSecret: ".$formSecret,"ipAddress: ".$ipAddress,"browser: ".$arrBrowserString[0],"browserVersion: ".$arrBrowserString[1],"operatingSystem: ".$arrBrowserString[2],"volFName: ".$volFName,"volLName: ".$volLName,"volEmail: ".$volEmail,"volPhone: ".$volPhone,"volIDType: ".$volIDType,"volID: ".$volID,"volTroop: ".$volTroop,"volSU: ".$volSU,"txt1: ".$txt1,"txt2: ".$txt2,"txt3: ".$txt3,"txt4: ".$txt4,"txt5: ".$txt5,"txt6: ".$txt6,"txt7: ".$txt7,"txt8: ".$txt8,"txt9: ".$txt9,"txt10: ".$txt10,"txt11: ".$txt11,"txt12: ".$txt12,"txt13: ".$txt13,"txt14: ".$txt14,"volSignedName: ".$volSignedName);
                     $browserString = getBrowserInfo($_SERVER['HTTP_USER_AGENT']);
                     $arrBrowserString = explode(';', $browserString);
                     $pageTitle = "Troop Cookie Manager Application Form";
@@ -44,20 +44,10 @@
                     //= PROCESS DATA FROM FORM	====================================================================================================================
                     //= ONCE FORM HAS BEEN SUBMITTED WRITE THE ORDER INFORMATION TO THE DATABASE	                                                               =
                     //==============================================================================================================================================
-                    //$ckSQL = "select id,emailSent from tbl_TCT_TCMApplication where formSecret = '" . $formSecret . "'";
-                    //$result = odbc_exec($writeConn, $ckSQL);
-                    //$id = odbc_result($result, 'id');
-                    //$emailSent = odbc_result($result, 'emailSent');
-    //                echo "SQL: ".$ckSQL."<br>";
-    //                echo "<br>ID: ".$id."<br>";
-    //                echo "EMail Flag: ".$emailSent."<br>";
                     try {
                         //echo "<b>Submit to Database</b><br>";
                         $stmt = $dbh_write->prepare('
-                        EXEC sp_Save_TCT_TCMApplication @formSecret=:formSecret,@ipAddress=:ipAddress,@browser=:browser,@browserVersion=:browserVersion,@os=:os,@volFName=:volFName,@volLName=:volLName,@volEmail=:volEmail');
-                        //,@yos_AwardYears=:yos_AwardYears,@yos_PreviousAwardReceived=:yos_PreviousAwardReceived,@yos_WhichPreviousAward=:yos_WhichPreviousAward,@yos_StartMonth=:yos_StartMonth,@yos_StartYear=:yos_StartYear,@yos_PreviousAwardDocumentation=:yos_PreviousAwardDocumentation,@yos_NoPreviousAwardDocumentation=:yos_NoPreviousAwardDocumentation,@yos_PresentationLocation=:yos_PresentationLocation
-                        ////,@nomTroop=:nomTroop,@volAddress=:volAddress,@volAddress2=:volAddress2,@volCity=:volCity,@volZip=:volZip,@volCounty=:volCounty,
-                        ////,,@flyer=:flyer
+                        EXEC sp_Save_TCT_TCMApplicationx @formSecret=:formSecret,@ipAddress=:ipAddress,@browser=:browser,@browserVersion=:browserVersion,@os=:os,@volFName=:volFName,@volLName=:volLName,@volEmail=:volEmail,@volPhone=:volPhone,@volIDType=:volIDType,@volID=:volID,@volTroop=:volTroop,@volSU=:volSU,@txt1=:txt1,@txt2=:txt2,@txt3=:txt3,@txt4=:txt4,@txt5=:txt5,@txt6=:txt6,@txt7=:txt7,@txt8=:txt8,@txt9=:txt9,@txt10=:txt10,@txt11=:txt11,@txt12=:txt12,@txt13=:txt13,@txt14=:txt14,@volSignedName=:volSignedName');
                         $stmt->bindParam(':formSecret', $formSecret, PDO::PARAM_STR);
                         $stmt->bindParam(':ipAddress', $ipAddress, PDO::PARAM_STR);
                         $stmt->bindParam(':browser', $arrBrowserString[0], PDO::PARAM_STR);
@@ -66,14 +56,131 @@
                         $stmt->bindParam(':volFName', $volFName, PDO::PARAM_STR);
                         $stmt->bindParam(':volLName', $volLName, PDO::PARAM_STR);
                         $stmt->bindParam(':volEmail', $volEmail, PDO::PARAM_STR);
+                        $stmt->bindParam(':volPhone', $volPhone, PDO::PARAM_STR);
+                        $stmt->bindParam(':volIDType', $volIDType, PDO::PARAM_STR);
+                        $stmt->bindParam(':volID', $volID, PDO::PARAM_STR);
+                        $stmt->bindParam(':volTroop',$volTroop, PDO::PARAM_STR);
+                        $stmt->bindParam(':volSU',$volSU, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt1',$txt1, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt2',$txt2, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt3',$txt3, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt4',$txt4, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt5',$txt5, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt6',$txt6, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt7',$txt7, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt8',$txt8, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt9',$txt9, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt10',$txt10, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt11',$txt11, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt12',$txt12, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt13',$txt13, PDO::PARAM_STR);
+                        $stmt->bindParam(':txt14',$txt14, PDO::PARAM_STR);
+                        $stmt->bindParam(':volSignedName',$volSignedName, PDO::PARAM_STR);
+
                         $stmt->execute();
-                        $stmt = null;
-                        $dbh = null;
+                        //$stmt = null;
+                        //$dbh = null;
+
+                        try {
+                            $transport = Swift_SmtpTransport::newInstance('10.1.1.21',25);
+                            $mailer = Swift_Mailer::newInstance($transport);
+                            $message = Swift_Message::newInstance();
+                            //SET PRIORITY TO HIGH
+                            $message->setPriority(3);
+                            $message->setSubject('Girls Scouts or Northeast Texas Confirmation Email');
+                            $message->setFrom(array('webmaster@gsnetx.org' => 'Girl Scouts of Northeast Texas'));
+                            //$message->setTo(array($email));
+                            //$message->setTo(array($email));
+                            $message->setTo(array('barker323@verizon.net'));
+                            $message->setBody($emailMessage, 'text/html');
+                            $message->setBcc(array('bbarker@gsnetx.org' => 'Bob Barker'));
+                            // Send the message
+                            //$mailer->send($message);
+                            if ($mailer->send($message)) {
+                                echo "<strong>EMAIL SENT FROM GSNETX MAIL<br><br></strong>";
+                                //= EMAIL SENT SUCCESSFULLY. UPDATE DATABASE SENT EMAIL FLAG TO TRUE =============================================================
+                                $tableName = "tbl_NewLeads";
+                                $emailTransport = "gsnetx";
+                                $emailSent = '1';
+                                $stmt = $dbh_write->prepare('EXEC GSNETX_LeadGeneration.dbo.sp_Update_EmailSendStatus @tableName=:tableName,@formSecret=:formSecret,@emailTransport=:emailTransport,@emailSent=:emailSent');
+                                $stmt->bindParam('tableName',$tableName,PDO::PARAM_STR);
+                                $stmt->bindParam('formSecret',$formSecret,PDO::PARAM_STR);
+                                $stmt->bindParam('emailTransport',$emailTransport,PDO::PARAM_STR);
+                                $stmt->bindParam('emailSent',$emailSent,PDO::PARAM_STR);
+                                $stmt->execute();
+                            }
+                        } catch (Exception $gsnetxEmail) {
+                            //echo "Catch ".$gsnetxEmail."<br>";
+                            try {
+                                $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 587, 'tls');
+                                $transport->setUsername('gsnetxweb@gmail.com');
+                                $transport->setPassword('divasRock2012');
+                                $mailer = Swift_Mailer::newInstance($transport);
+                                $message = Swift_Message::newInstance();
+                                // SET PRIORITY TO HIGH
+                                $message->setPriority(3);
+                                $message->setSubject('Girls Scouts or Northeast Texas Confirmation');
+                                $message->setFrom(array('webmaster@gsnetx.org' => 'Girl Scouts of Northeast Texas'));
+                                //$message->setTo(array($email));
+                                $message->setTo(array('barker323@gmail.com'));
+                                $message->setBody($emailMessage, 'text/html');
+                                $message->setBcc(array('jrbarker@gsnetx.org' => 'Bob Barker'));
+                                // Send the message
+                                //$mailer->send($message);
+                                if ($mailer->send($message)) {
+                                    //echo "<strong>EMAIL SENT FROM GMAIL MAIL</strong><br><br>";
+                                    //= EMAIL SENT SUCCESSFULLY. UPDATE DATABASE SENT EMAIL FLAG TO TRUE =============================================================
+                                    $tableName = "tbl_NewLeads";
+                                    $emailTransport = "gmail";
+                                    $emailSent = '0';
+                                    $stmt = $dbh_write->prepare('EXEC GSNETX_LeadGeneration.dbo.sp_Update_EmailSendStatus @tableName=:tableName,@formSecret=:formSecret,@emailTransport=:emailTransport,@emailSent=:emailSent');
+                                    $stmt->bindParam('tableName',$tableName,PDO::PARAM_STR);
+                                    $stmt->bindParam('formSecret',$formSecret,PDO::PARAM_STR);
+                                    $stmt->bindParam('emailTransport',$emailTransport,PDO::PARAM_STR);
+                                    $stmt->bindParam('emailSent',$emailSent,PDO::PARAM_STR);
+                                    $stmt->execute();
+                                }
+                            } catch (Exception $gmail) {
+                                ////echo "<br>Catch GMAIL" . "<br>";
+                                $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 587, 'tls');
+                                $transport->setUsername('gsnetxweb@gmail.com');
+                                $transport->setPassword('divasRock2012');
+                                $mailer = Swift_Mailer::newInstance($transport);
+                                $message = Swift_Message::newInstance();
+                                // SET PRIORITY TO HIGH
+                                $message->setPriority(3);
+                                $message->setSubject('Error Report From the Lead Generation Form via GMail2');
+                                $message->setFrom(array('webmaster@gsnetx.org' => 'Girl Scouts of Northeast Texas'));
+                                $message->setTo(array('webmaster@gsnetx.org'));
+                                //$message->setBody($gMail . "\r\n\r\nFORM DATA\r\nFName: ".$fName."\r\nLName: ".$lName."\r\nPhone: ".$phone."\r\nCity: ".$city."\r\nZip: ".$zip."\r\nEmail: ".$email."\r\nGrade: " . $grade);
+                                $message->setBody(createTryCatchErrorMessage($gmail,$dbFields,'gmail'));
+                                $message->setBcc(array('jrbarker@gsnetx.org' => 'Bob Barker'));
+                                // Send the message
+                                $mailer->send($message);
+                                $emailErrorMessage = "<div class=\"brokenEmailWrapper\">Unfortunately, we were unable to send the confirmation email.<br>Our IT department has been notified and is working on the problem.<br>The confirmation will be sent when the issue is resolved.</div>";
+                            }
+                        }
                     } catch (Exception $dbError) {
+                        $databaseErrorMessage = "<div class=\"dataWrapper\">We're sorry, but we're unable to process your information at this time.<br>Our IT department has been notified and is working on the problem.</div>";
+                        //- IN PRODUCTION, EMAIL THE ERROR MESSAGE TO THE WEBMASTER ACCOUNT -----------------------------------------------------------------------------------
+                        $fields = array("Form Secret: $formSecret ", "IP Address: $ipAddress", "Browser: $arrBrowserString[0]", "browserVersion: $arrBrowserString[1]", "operatingSystem: $arrBrowserString[2]", "volFName: $volFName", "volLName: $volLName", "volEmail: $volEmail", "volPhone: $volPhone", "volIDType: $volIDType", "volID: $volID", "volTroop: $volTroop", "volSU: $volSU", "txt1: $txt1", "txt2: $txt2", "txt3: $txt3", "txt4: $txt4", "txt5: $txt5", "txt6: $txt6", "txt7: $txt7", "txt8: $txt8", "txt9: $txt9", "txt10: $txt10", "txt11: $txt11", "txt12: $txt12", "txt13: $txt13", "txt14: $txt14", "volSignedName: $volSignedName");
+                        try {
+                            $transport = Swift_SmtpTransport::newInstance('10.1.1.21', 25);
+                            $mailer = Swift_Mailer::newInstance($transport);
+                            $message = Swift_Message::newInstance();
+                            // SET PRIORITY TO HIGH
+                            $message->setPriority(3);
+                            $message->setSubject('DB Error Report From the Lead Generation Form');
+                            $message->setFrom(array('webmaster@gsnetx.org' => 'Girl Scouts of Northeast Texas'));
+                            $message->setTo(array('webmaster@gsnetx.org'));
+                            //$message->setBody($gMail . "\r\n\r\nFORM DATA\r\nFName: ".$fName."\r\nLName: ".$lName."\r\nPhone: ".$phone."\r\nCity: ".$city."\r\nZip: ".$zip."\r\nEmail: ".$email."\r\nGrade: " . $grade);
+                            $message->setBody(createTryCatchErrorMessage($dbError, $fields, 'database'));
+                            $message->setBcc(array('jrbarker@gsnetx.org' => 'Bob Barker'));
+                            // Send the message
+                            $mailer->send($message);
+                        } catch (Exception $dbEmailError) {
 
-                        echo "Error: " . $dbError . "<br>";
-
-                    }
+                        }
 
                         //
                         //    $sql = "{CALL sp_Save_TCT_TCMApplication(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
@@ -226,6 +333,7 @@
                         //    $screenMessage .=	"<div style=\"font:10pt/14pt verdana,arial,sans-serif;margin:10px 0;\">If you have any questions, contact the GSNETX Cookie Team at <a href=\"mailto:cookies@gsnex.org?subject=Question about the Troop Cookie Manager Application\">cookies@gsnetx.org</a> or 972-349-2400. </div>";
                         //    $screenMessage .=	"<p>&#160;</p><p>&#160;</p><p>&#160;</p>";
                         //    $screenMessage .=	"</div>";
+                    }
                 } else {
                     //= DUPLICATE RECORD - DO NOT SUBMIT RECORD TO DATABASE ===============================================================================
                     $duplicateErrorMessage = "<div class=\"duplicateWrapper\">This request has already been submitted. If you wish to submit another, please start at the <a href=\"default.php\">beginning of the form</a>.</div>";
@@ -310,7 +418,23 @@
                         <div class="span-2 last"><p>&#32;</p></div>
                         <div class="span-24" style="height:10px;">&nbsp;</div>
                         <div class="span-2"><p>&#32;</p></div>
-                        <div class="span-20"><?php echo $screenMessage;?></div>
+                        <div class="span-20">
+                            <?php
+                            if (($databaseErrorMessage != '') || ($emailErrorMessage != '') || ($duplicateErrorMessage != '')) {
+                                echo "<div class=\"errorWrapper\">";
+                                if ($databaseErrorMessage != '') {
+                                    echo $databaseErrorMessage;
+                                } else if ($emailErrorMessage != '') {
+                                    echo $emailErrorMessage;
+                                } else if ($duplicateErrorMessage != '') {
+                                    echo $duplicateErrorMessage;
+                                }
+                                echo "</div>";
+                            } else {
+                                echo $confirmationMessage;
+                            }
+                            ?>
+                        </div>
                         <div class="span-2 last"><p>&#32;</p></div>
                         <div class="span-24" style="height:10px;">&nbsp;</div>
                     </div>
@@ -318,7 +442,7 @@
             </div>
             <div class="container">
                 <div id="footerWrapper">
-                    <div id="copyRight">&copy; <?php auto_copyright();?> Girl Scouts of Northeast Texasz</div>s
+                    <div id="copyRight">&copy; <?php auto_copyright();?> Girl Scouts of Northeast Texas</div>
                     <div id="socialMedia">
                         <a href="https://twitter.com/GSNETXcouncil" target="_blank"><img src="img/twitter_30_white.png" width="30" height="30" /></a>
                         <a href="https://www.facebook.com/GSNETX?ref=ts" target="_blank"><img src="img/facebook_30_white.png" width="30" height="30" /></a>

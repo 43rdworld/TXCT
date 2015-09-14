@@ -18,7 +18,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Volunteer Appreciation Awards Online Nomination Form</title>
+        <title>Troop Cookie Manager Online Registration Form</title>
         <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
         <link href="css/txct.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
@@ -52,7 +52,7 @@
                 </div>
             </div>
         <!-- ## BEGIN FORM MAIN BODY ####################################################################################### -->
-            <form name="theForm" id="theForm" method="post" action="tcmApplicationConfirm.php" autocomplete="off">
+            <form name="theForm" id="theForm" method="post" action="tcmApplicationConfirm.php">
                 <div>
                     <!-- ## BEGIN PAGE 1 ############################################################################################### -->
                     <div class="no_js">
@@ -126,7 +126,7 @@
                             <div class="span-2 last" style="height:2px;"><p>&#32;</p></div>
                             <div class="span-24 formFieldSpacer">&#32;</div>
                             <div class="span-2" style="height:2px;"><p>&#32;</p></div>
-                            <div class="span-20 tcmPositionIntro">The GS Troop Cookie Manager is responsible for administering the Girl Scout Troop’s Cookie Program Activity, all financial transactions, reporting and paperwork and providing programmatic support.  Term:  12 months.</div>
+                            <div class="span-20 tcmPositionIntro">The GS Troop Cookie Manager is responsible for administering the Girl Scout Troop’s Cookie Program Activity, including all financial transactions, reporting and paperwork and providing programmatic support.</div>
                             <div class="span-2 last" style="height:2px;"><p>&#32;</p></div>
                             <div class="span-24 formFieldSpacer">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
@@ -164,7 +164,7 @@
                             <div class="span-5 textRight"><label>Length of Appointment:</label></div>
                             <div class="span-15">
                                 <ul style="font-size:1em;margin-bottom:0;">
-                                    <li>Volunteer Appointment Agreement is for the period of October 2014 to September 2015.</li>
+                                    <li>Volunteer Appointment Agreement is for the period of October1, 2015 to September 30, 2016.</li>
                                 </ul>
                             </div>
                             <div class="span-2 last">&#32;</div>
@@ -183,7 +183,6 @@
                             <div class="span-20 dividerSection" style="height:2px;">&#32;</div>
                             <div class="span-2 last" style="height:2px;"><p>&#32;</p></div>
                             <div class="span-24 marginTop15">&#32;</div>
-
                             <!-- START REGISTRATION INFO BLOCK ------------------------------------------------------------------------------------------------>
                             <div class="span-24">&#32;</div>
                             <div class="span-24 height5">&#160;</div>
@@ -225,7 +224,7 @@
                             <div class="span-2"><p>&#32;</p></div>
                             <div class="span-5 textRight input"><label for="volIDType" id="volIDTypeLabel" ><span class="required">*</span>Identification Type: </label></div>
                             <div class="span-9 input">
-                                <select name="volIDType" ID="volIDType" class="form_Select200" tabindex="6" style="border:1px solid #bbb;">
+                                <select name="volIDType" ID="volIDType" class="form_Select200" tabindex="6" style="border:1px solid #bbb;" autocomplete="off">
                                     <option value="">- Select an ID type --</option>
                                     <option value="DL">Driver&#39;s license #</option>
                                     <option value="ID">State issued ID #</option>
@@ -240,16 +239,21 @@
                             <div class="span-7"><div id="volIDError" class="errorContainer"></div></div>
                             <div class="span-1 last">&#32;</div>
                             <div class="span-24 formFieldSpacer">&#32;</div>
+                            <!-- *********************************************************************** -->
                             <div class="span-2"><p>&#32;</p></div>
                             <div class="span-5 textRight input"><label for="volTroop" id="volTroopLabel"><span class="required">*</span>Troop Number:</label></div>
-                            <div class="span-7 input"><input type="text" id="volTroop" name="volTroop" class="form_Field50" tabindex="8" autocomplete="off" maxlength="5" />&nbsp;&nbsp;<span class="formNote">(5 character maximum)</span></div>
+                            <div class="span-7 input"><?php echo getSelectList($dbh,'volTroop','volTroop','sp_GetTroopNumbers_List 2015,null','form_Select50','Select your Troop Number --','troop_number,null,troop_number,null','style="padding:3px 4px;border:1px solid #999;"','onchange="$(\'#serviceUnitTest\').val(this.value);getTCTServiceUnit(\'getTCTSU.php?troopNum=\'+this.value,\'innerHTML\',\'serviceUnitDiv\');"','id:null',9,null,null,null,null,null,null,null,null,null);?></div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-7"><div id="volTroopError" class="errorContainer"></div></div>
-                            <div class="span-1 last">&#32;</div>
+                            <div class="span-6"><div id="volTroopError" class="errorContainer"></div></div>
+                            <div class="span-2 last">&#32;</div>
                             <div class="span-24 formFieldSpacer">&#32;</div>
+                            <!-- *********************************************************************** -->
                             <div class="span-2"><p>&#32;</p></div>
                             <div class="span-5 textRight input"><label for="volSU" id="volSULabel"><span class="required">*</span>GS Service Unit:</label></div>
-                            <div class="span-7 input"><?php echo getSelectList($dbh,'volSU','volSU','sp_GetTCTServiceUnit_List 2015,null','form_Select300','Select your ServiceUnit --','su_Number,null,su_Number,su_AreaNames','style="padding:3px 4px;border:1px solid #999;"',null,'id:null',9,null,null,null,null,null,null,null,null,null);?></div>
+                            <div class="span-7 input" id="serviceUnitDiv">
+                                <select class"form_Select300" name="serviceUnit" id="serviceUnit" tabIndex="9" style="width:300px;"><option value="">Select your Service Unit --</option></select>
+                                <?php //echo getSelectList($dbh,'volSU','volSU','sp_GetTCTServiceUnit_List 2015,null','form_Select300','Select your Service Unit --','su_Number,null,su_Number,su_AreaNames','style="padding:3px 4px;border:1px solid #999;"',null,'id:null',9,null,null,null,null,null,null,null,null,null);?>
+                            </div>
                             <div class="span-2"><p>&#32;</p></div>
                             <div class="span-6"><div id="volSUError" class="errorContainer"></div></div>
                             <div class="span-2 last">&#32;</div>
@@ -269,96 +273,96 @@
                             <div class="span-3 last">&#32;</div>
                             <div class="span-24 formFieldSpacer">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-5 textRight input"><input type="text" name="txt1" id="txt1" class="form_Field50 padding2" tabindex="10" autocomplete="off" maxlength="4" /></div>
-                            <div class="span-9 t1a"><label for="txt1" class="labelNormal">I understand it is a requirement that I take the GSNETX online Cookie Program Training.</label></div>
+                            <div class="span-5 textRight input"><input type="text" name="txt1" id="txt1" class="form_Field50 padding2 textCenter textUppercase" tabindex="10" autocomplete="off" maxlength="4" /></div>
+                            <div class="span-9 t1a"><label for="txt1" class="labelNormal">I understand that while training is not required, it is my responsibility to take advantage of the eBudde and program training materials available to me.</label></div>
                             <div class="span-6"><div id="txt1Error" class="errorContainer"></div></div>
                             <div class="span-2 last">&#32;</div>
-                            <div class="span-24 formFieldSpacer">&#32;</div>
+                            <div class="span-24 formFieldSpacer10">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-5 textRight input"><input type="text" name="txt2" id="txt2" class="form_Field50 padding2" tabindex="11" autocomplete="off" maxlength="4" style="vertical-align:top;" /></div>
+                            <div class="span-5 textRight input"><input type="text" name="txt2" id="txt2" class="form_Field50 padding2 textCenter textUppercase" tabindex="11" autocomplete="off" maxlength="4" style="vertical-align:top;" /></div>
                             <div class="span-9 t1a"><label for="txt2" class="labelNormal">I understand that I am responsible for holding girl & parent/guardian information session(s) and distributing Cookie Program information and forms to girls and their parents.</label></div>
                             <div class="span-6"><div id="txt2Error" class="errorContainer"></div></div>
                             <div class="span-2 last">&#32;</div>
-                            <div class="span-24 formFieldSpacer">&#32;</div>
+                            <div class="span-24 formFieldSpacer10">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-5 textRight input"><input type="text" name="txt3" id="txt3" class="form_Field50 padding2" tabindex="12" autocomplete="off" maxlength="4" /></div>
+                            <div class="span-5 textRight input"><input type="text" name="txt3" id="txt3" class="form_Field50 padding2 textCenter textUppercase" tabindex="12" autocomplete="off" maxlength="4" /></div>
                             <div class="span-9 t1a"><label for="txt3" class="labelNormal">I will ensure girls are registered for the current Girl Scout membership year and ensure online Cookie Program Parent Permission Forms for each participating Girl Scout are completed.</label></div>
                             <div class="span-6"><div id="txt3Error" class="errorContainer"></div></div>
                             <div class="span-2 last">&#32;</div>
-                            <div class="span-24 formFieldSpacer">&#32;</div>
+                            <div class="span-24 formFieldSpacer10">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-5 textRight input"><input type="text" name="txt4" id="txt4" class="form_Field50 padding2" tabindex="13" autocomplete="off" maxlength="4" /></div>
-                            <div class="span-9 t1a"><label for="txt4" class="labelNormal">I understand it is my responsibility to interpret to girls and their parents/guardians the Cookie Program procedures, girl reward program, and the importance of the Cookie Program to the council and to the girl’s leadership journey.</label></div>
+                            <div class="span-5 textRight input"><input type="text" name="txt4" id="txt4" class="form_Field50 padding2 textCenter textUppercase" tabindex="13" autocomplete="off" maxlength="4" /></div>
+                            <div class="span-9 t1a"><label for="txt4" class="labelNormal">I understand it is my responsibility to interpret to girls and their parents/guardians the Cookie Program procedures, girl reward program, and the importance of the Cookie Program to the council and to the girl&#146;s leadership journey.</label></div>
                             <div class="span-6"><div id="txt4Error" class="errorContainer"></div></div>
                             <div class="span-2 last">&#32;</div>
-                            <div class="span-24 formFieldSpacer">&#32;</div>
+                            <div class="span-24 formFieldSpacer10">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-5 textRight input"><input type="text" name="txt5" id="txt5" class="form_Field50 padding2" tabindex="14" autocomplete="off" maxlength="4" /></div>
+                            <div class="span-5 textRight input"><input type="text" name="txt5" id="txt5" class="form_Field50 padding2 textCenter textUppercase" tabindex="14" autocomplete="off" maxlength="4" /></div>
                             <div class="span-9 t1a"><label for="txt5" class="labelNormal">I understand it is my responsibility to communicate and cooperate with my Girl Scout Service Unit Cookie Coordinator (SUCC) and <strong>adhere to deadlines</strong>.</label></div>
                             <div class="span-6"><div id="txt5Error" class="errorContainer"></div></div>
                             <div class="span-2 last">&#32;</div>
-                            <div class="span-24 formFieldSpacer">&#32;</div>
+                            <div class="span-24 formFieldSpacer10">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-5 textRight input"><input type="text" name="txt6" id="txt6" class="form_Field50 padding2" tabindex="15" autocomplete="off" maxlength="4" /></div>
+                            <div class="span-5 textRight input"><input type="text" name="txt6" id="txt6" class="form_Field50 padding2 textCenter textUppercase" tabindex="15" autocomplete="off" maxlength="4" /></div>
                             <div class="span-9 t1a"><label for="txt6" class="labelNormal">I understand it is my responsibility to train Girl Scouts on all aspects of the 5 Skills of the Cookie Program.</label></div>
                             <div class="span-6"><div id="txt6Error" class="errorContainer"></div></div>
                             <div class="span-2 last">&#32;</div>
-                            <div class="span-24 formFieldSpacer">&#32;</div>
+                            <div class="span-24 formFieldSpacer10">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-5 textRight input"><input type="text" name="txt7" id="txt7" class="form_Field50 padding2" tabindex="16" autocomplete="off" maxlength="4" /></div>
+                            <div class="span-5 textRight input"><input type="text" name="txt7" id="txt7" class="form_Field50 padding2 textCenter textUppercase" tabindex="16" autocomplete="off" maxlength="4" /></div>
                             <div class="span-9 t1a"><label for="txt7" class="labelNormal">I understand it is my responsibility to promote booth sales and request booth space and time, as needed.  I will ensure that a positive image of Girl Scouting is presented to the community during booth sales.</label></div>
                             <div class="span-6"><div id="txt7Error" class="errorContainer"></div></div>
                             <div class="span-2 last">&#32;</div>
-                            <div class="span-24 formFieldSpacer">&#32;</div>
+                            <div class="span-24 formFieldSpacer10">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-5 textRight input"><input type="text" name="txt8" id="txt8" class="form_Field50 padding2" tabindex="17" autocomplete="off" maxlength="4" /></div>
+                            <div class="span-5 textRight input"><input type="text" name="txt8" id="txt8" class="form_Field50 padding2 textCenter textUppercase" tabindex="17" autocomplete="off" maxlength="4" /></div>
                             <div class="span-9 t1a"><label for="txt8" class="labelNormal">I understand it is my responsibility to set due dates to receive girl cookie orders, payments and girl rewards selection information from girls and parents/guardians.</label></div>
                             <div class="span-6"><div id="txt8Error" class="errorContainer"></div></div>
                             <div class="span-2 last">&#32;</div>
-                            <div class="span-24 formFieldSpacer">&#32;</div>
+                            <div class="span-24 formFieldSpacer10">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-5 textRight input"><input type="text" name="txt9" id="txt9" class="form_Field50 padding2" tabindex="18" autocomplete="off" maxlength="4" /></div>
+                            <div class="span-5 textRight input"><input type="text" name="txt9" id="txt9" class="form_Field50 padding2 textCenter textUppercase" tabindex="18" autocomplete="off" maxlength="4" /></div>
                             <div class="span-9 t1a"><label for="txt9" class="labelNormal">I understand it is my responsibility to maintain accurate records (paper copies and within all software applications including eBudde) and will issue receipts any time products or money is exchanged.</label></div>
                             <div class="span-6"><div id="txt9Error" class="errorContainer"></div></div>
                             <div class="span-2 last">&#32;</div>
-                            <div class="span-24 formFieldSpacer">&#32;</div>
+                            <div class="span-24 formFieldSpacer10">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-5 textRight input"><input type="text" name="txt10" id="txt10" class="form_Field50 padding2" tabindex="19" autocomplete="off" maxlength="4" /></div>
+                            <div class="span-5 textRight input"><input type="text" name="txt10" id="txt10" class="form_Field50 padding2 textCenter textUppercase" tabindex="19" autocomplete="off" maxlength="4" /></div>
                             <div class="span-9 t1a"><label for="txt10" class="labelNormal">As the Girl Scout Troop Cookie Manager, I agree that it is my responsibility to timely complete and submit any Outstanding Funds Report Forms and to follow all established guidelines for reporting unpaid or delinquent funds owed for the Girl Scout Troop cookie money. I agree that I will not be allowed to submit an Outstanding Funds Report Form for money which I personally owe for the Girl Scout Troop cookie money.</label></div>
                             <div class="span-6"><div id="txt10Error" class="errorContainer"></div></div>
                             <div class="span-2 last">&#32;</div>
-                            <div class="span-24 formFieldSpacer">&#32;</div>
+                            <div class="span-24 formFieldSpacer10">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-5 textRight input"><input type="text" name="txt11" id="txt11" class="form_Field50 padding2" tabindex="20" autocomplete="off" maxlength="4" /></div>
-                            <div class="span-9 t1a"><label for="txt11" class="labelNormal">As the Girl Scout Troop Cookie Manager, I understand that collection action will be taken on all outstanding accounts and debts for the Girl Scout Troop cookie money which are not settled in full by <strong>March 6, 2015</strong>. I understand that such outstanding accounts or debts may be reported to a credit bureau and referred to collection agencies and pursued through legal action against me.  I agree to pay all reasonable costs and expenses of collecting such outstanding debts and unpaid amounts, including collection agency fees, reasonable attorneys’ fees, and costs.</label></div>
+                            <div class="span-5 textRight input"><input type="text" name="txt11" id="txt11" class="form_Field50 padding2 textCenter textUppercase" tabindex="20" autocomplete="off" maxlength="4" /></div>
+                            <div class="span-9 t1a"><label for="txt11" class="labelNormal">As the Girl Scout Troop Cookie Manager, I understand that collection action will be taken on all outstanding accounts and debts for the Girl Scout Troop cookie money which are not settled in full by March _7__, 2016. I understand that such outstanding accounts or debts may be reported to a credit bureau and referred to collection agencies and pursued through legal action against me.  I agree to pay all reasonable costs and expenses of collecting such outstanding debts and unpaid amounts, including collection agency fees, reasonable attorneys&#146; fees, and costs.</label></div>
                             <div class="span-6"><div id="txt11Error" class="errorContainer"></div></div>
                             <div class="span-2 last">&#32;</div>
-                            <div class="span-24 formFieldSpacer">&#32;</div>
+                            <div class="span-24 formFieldSpacer10">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-5 textRight input"><input type="text" name="txt12" id="txt12" class="form_Field50 padding2" tabindex="21" autocomplete="off" maxlength="4" /></div>
+                            <div class="span-5 textRight input"><input type="text" name="txt12" id="txt12" class="form_Field50 padding2 textCenter textUppercase" tabindex="21" autocomplete="off" maxlength="4" /></div>
                             <div class="span-9 t1a">
                                 <label for="txt12" class="labelNormal">As the Girl Scout Troop Cookie Manager, I agree that I am personally responsible for handling and accounting for the Girl Scout Troop cookie money. I understand that I assume all financial responsibility for collection and timely payment of all the Girl Scout troop cookie money for my troop.</label>
                                 <ul class="permissionList">
                                     <li>Therefore, I acknowledge that I am fully aware of this responsibility.</li>
                                     <li>I agree to keep accurate records and to personally assume such financial responsibility for all Girl Scout Troop cookie money.</li>
-                                    <li>If any Girl Scout troop cookie money is owed, I accept personal financial responsibility for payment of that outstanding debts owed for the Girl Scout Troop cookie money.</li>
+                                    <li>If any Girl Scout troop cookie money is owed, I accept personal financial responsibility for payment of that outstanding debt owed for the Girl Scout Troop cookie money. </li>
                                 </ul>
                             </div>
                             <div class="span-6"><div id="txt12Error" class="errorContainer"></div></div>
                             <div class="span-2 last">&#32;</div>
-                            <div class="span-24 formFieldSpacer">&#32;</div>
+                            <div class="span-24 formFieldSpacer10">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-5 textRight input"><input type="text" name="txt13" id="txt13" class="form_Field50 padding2" tabindex="22" autocomplete="off" maxlength="4" /></div>
-                            <div class="span-9 t1a"><label for="txt13" class="labelNormal"><strong>FIDUCIARY DUTY AND FINANCIAL RESPONSIBILITY</strong>: The undersigned Girl Scout Troop Cookie Manager hereby acknowledges his/her understanding and agreement that the responsibilities of a Troop Cookie Manager constitute a fiduciary duty for the benefit of the GSNETX and its beneficiaries. I have read the responsibilities outlined herein, understand them, and agree to assume them in accordance with all applicable GSNETX policies and procedures. I agree to accept, and do hereby accept, financial responsibility, for all Troop cookies entrusted for distribution, sale, collection, accounting, and deposit, and I further agree to adhere to, and abide by all of the prescribed GSNETX procedures and policies for record-keeping, accounting, and depositing cookie funds. Should it become necessary for GSNETX to incur collection fees, attorney’s fees and/or costs for legal representation to collect any monies not paid, or payable, from the cookie sales, which are attributable to my Troop, I shall be responsible for all such collection agency fees, reasonable attorney’s fees, and costs.</label></div>
+                            <div class="span-5 textRight input"><input type="text" name="txt13" id="txt13" class="form_Field50 padding2 textCenter textUppercase" tabindex="22" autocomplete="off" maxlength="4" /></div>
+                            <div class="span-9 t1a"><label for="txt13" class="labelNormal"><strong>FIDUCIARY DUTY AND FINANCIAL RESPONSIBILITY</strong>: The undersigned Girl Scout Troop Cookie Manager hereby acknowledges his/her understanding and agreement that the responsibilities of a Troop Cookie Manager constitute a fiduciary duty for the benefit of the GSNETX and its beneficiaries. I have read the responsibilities outlined herein, understand them, and agree to assume them in accordance with all applicable GSNETX policies and procedures. I agree to accept, and do hereby accept, financial responsibility, for all Troop cookies entrusted for distribution, sale, collection, accounting, and deposit, and I further agree to adhere to, and abide by all of the prescribed GSNETX procedures and policies for record-keeping, accounting, and depositing cookie funds. Should it become necessary for GSNETX to incur collection fees, attorney’s fees and/or costs for legal representation to collect any monies not paid, or payable, from the cookie sales, which are attributable to my Troop, I shall be responsible for all such collection agency fees, reasonable attorney&#146;s fees, and costs.</label></div>
                             <div class="span-6"><div id="txt13Error" class="errorContainer"></div></div>
                             <div class="span-2 last">&#32;</div>
-                            <div class="span-24 formFieldSpacer">&#32;</div>
+                            <div class="span-24 formFieldSpacer10">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-5 textRight input"><input type="text" name="txt14" id="txt14" class="form_Field50 padding2" tabindex="23" autocomplete="off" maxlength="4" /></div>
+                            <div class="span-5 textRight input"><input type="text" name="txt14" id="txt14" class="form_Field50 padding2 textCenter textUppercase" tabindex="23" autocomplete="off" maxlength="4" /></div>
                             <div class="span-9 t1a"><label for="txt14" class="labelNormal">I understand it is my responsibility to have completed the Criminal Background process and have been approved to volunteer with GSNETX.</label></div>
                             <div class="span-6"><div id="txt14Error" class="errorContainer"></div></div>
                             <div class="span-2 last">&#32;</div>
-                            <div class="span-24 formFieldSpacer">&#32;</div>
+                            <div class="span-24 formFieldSpacer10">&#32;</div>
                             <div class="span-24 marginTop10">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
                             <div class="span-20 headerSection"><img src="img/acknowledgementsHeader_Sm.png" width="400" height="21" style="border:none;" alt="" /></div>
@@ -373,10 +377,10 @@
                                 <div class="eventIntroCopy_Alert">You must enter your name acknowledging that you have read, understand and agree to all terms and conditions outlined herein.</div>
                             </div>
                             <div class="span-2 last">&#32;</div>
-                            <div class="span-24 formFieldSpacer">&#32;</div>
+                            <div class="span-24 formFieldSpacer10">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
                             <div class="span-5 textRight input"><label for="volSignedName"><span class="required">*</span>Full Name: </label></div>
-                            <div class="span-9 input"><input type="text" name="volSignedName" id="volSignedName" class="form_Field275" tabindex="30" autocomplete="off"></div>
+                            <div class="span-9 input"><input type="text" name="volSignedName" id="volSignedName" class="form_Field275" tabindex="30" autocomplete="off" ></div>
                             <div class="span-7"><div id="volSignedNameError" class="errorContainer"></div></div>
                             <div class="span-1 last">&#32;</div>
                             <div class="span-24 formFieldSpacer">&#32;</div>
@@ -413,6 +417,7 @@
                     <br><br>
                     <input type="hidden" name="submitRegistration" id="submitRegistration" value="submitTroopCookieManagerRegistration" tabindex="-1" />
                     <input type="text" name="formSecret" id="formSecret" value="" tabindex="-1" placeholder="formSecret" />
+                    <input type="text" name="serviceUnitTest" id="serviceUnitTest" value="" tabindex="-1" placeholder="serviceUnit" />
                     <div class="formLableH">Ignore if visible: <label for="labrea">&#160;</label><input type="text" name="labrea" id="labrea" tabindex="-1" /></div>
                     <div style="display: none;"><a href="https://forms.gsnetx.org/chap.php">servo-staircase</a></div>
                 </div>

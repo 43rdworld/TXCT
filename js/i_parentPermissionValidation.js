@@ -4,117 +4,116 @@ $(document).ready(function () {
 			permGirlFName: {
 				 required: true,
 				minlength: 2,
-				   remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				   remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 			permGirlLName: {
 				 required: true,
 				minlength: 2,
-				   remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				   remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 			  permGSTroop: {
 				 required: true,
-				minlength: 2,
-				   remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				   remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 				   permSU: {
 				 required: true,
-				   remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				  // remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 			 permPackages: {
 				 required: true,
 				   digits: true,
-				   remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				   remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 			  permMyEmail: {
 				 required: true,
 				   emailX: true,
-				   remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				   remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 			 permMyEmail2: {
 				 required: true,
 				   emailX: true,
 				  equalTo: "#permMyEmail",
-				   remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				   remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 			permLeadEmail: {
 				 required: true,
 				   emailX: true,
-				   remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				   remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 		   permLeadEmail2: {
 				 required: true,
 				   emailX: true,
 				  equalTo: "#permLeadEmail",
-				   remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				   remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 			 permTCMEmail: {
 				 required: true,
 				   emailX: true,
-				   remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				   remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 			permTCMEmail2: {
 				 required: true,
 				   emailX: true,
 				  equalTo: "#permTCMEmail",
-				   remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				   remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 			perm1: {
 				required: true,
-				remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 			perm2: {
 				required: true,
 				equalTo: '#perm1',
-				remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 			perm3: {
 				required: true,
 				equalTo: '#perm1',
-				remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 			perm4: {
 				required: true,
 				equalTo: '#perm1',
-				remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 			perm5: {
 				required: true,
 				equalTo: '#perm1',
-				remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 			permCClub: {
 				required: true,
-				  //remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				  //remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 			permCC1: {
 				required: true,
 				equalTo: '#perm1',
-				remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 			permCC2: {
 				required: true,
 				equalTo: '#perm1',
-				remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 			permCC3: {
 				required: true,
 				equalTo: '#perm1',
-				remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 			permCC4: {
 				required: true,
 				equalTo: '#perm1',
-				remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 		  permParentFName: {
 				 required: true,
 				minlength: 2,
-				   remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				   remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 		  permParentLName: {
 				 required: true,
 				minlength: 2,
-				   remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				   remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 			   permIDType:   {
 				 required: true
@@ -122,28 +121,28 @@ $(document).ready(function () {
 				   permID: {
 				 required: true,
 				minlength: 2,
-				   remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				   remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 		  permHomeAddress: {
 				 required: true,
 				maxlength: 50,
-				   remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				   remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 				 permCity: {
 				 required: true,
 				maxlength: 30,
-				   remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				   remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 				  permZip: {
 				 required: true,
 				maxlength: 5,
 				   digits: true,
-				   remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				   remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 			permHomePhone: 	{
 				 required: true,
 				    phone: true,
-				   remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				   remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 			permGradLevel: 	{
 				 required: true
@@ -151,7 +150,7 @@ $(document).ready(function () {
 		  permSignedName: {
 				 required: true,
 				minlength: 2,
-				   remote: {url: "includes/i_parentPermissionValidate.php", async: false}
+				   remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			}
 		},
 
@@ -233,12 +232,11 @@ $(document).ready(function () {
             },
                   permGSTroop: {
                      required: "* Troop number is required",
-                    minlength: "* Troop # must be at least 2 characters",
-                       remote: "* Troop # must be at least 2 characters"
+                       //remote: "* Troop # must be at least 2 characters"
             },
                        permSU: {
                      required: "* Service Unit is required",
-                       remote: "* Service Unit is required"
+                       //remote: "* Service Unit is requiredz"
             },
                  permPackages: {
                      required: "* Number of packages is required",

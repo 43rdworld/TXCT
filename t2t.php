@@ -1,5 +1,5 @@
 <?php
-	header('Location: https://www.texascookietime.org/forms/tct2015/t2t.php');
+	//header('Location: https://www.texascookietime.org/forms/tct2015/t2t.php');
 	error_reporting (E_ALL ^ E_NOTICE);
 	header('Content-Type: text/html; charset=utf-8');
 	header('X-UA-Compatible: IE=edge,chrome=1');

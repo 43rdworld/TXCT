@@ -1,5 +1,5 @@
 <?php
-    // form source from http://bassistance.de/
+ // form source from http://bassistance.de/
     error_reporting (E_ALL ^ E_NOTICE);
     header('X-UA-Compatible: IE=edge,chrome=1');
     header('Content-Type: text/html; charset=utf-8');
@@ -7,50 +7,27 @@
     ini_set("display_errors", 1);
     require("i_PDOConnection.php");								    //=	CREATES DATA CONNECTION TO DATABASE
     require("i_PDOFunctions.php");								    //= LOAD FORM FUNCTIONS
-    require("includes/i_TCMSettings.php");
+
     session_start();												//= START SESSION TO PREVENT RE-SUBMITTING FORM
     $formSecret=md5(uniqid(rand(), true));							//= SET SECRET NUMBER TO USE IN DUPLICATE SUBMISSION DETECTION
 //    echo "SECRET: ".$formSecret."<br>";
 //    if(!ISSET($_SESSION['formSecret'])) {
 //        $_SESSION['formSecret'] = $formSecret;
 //    }
+	setRegistrationParams('10/01/2015','06/01/2016');
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Troop Cookie Manager Online Registration Form</title>
         <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+        <script src="js/vendors/modernizr.js"></script>
         <link href="css/txct.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
     </head>
-    <body onload="copyFormSecret('<?php echo $formSecret;?>');focusIt('volFName');">
+    <body onload="copyFormSecret('<?php echo $formSecret;?>');">
         <div>
-            <div class="container" style="position:relative;background-color:#00ae58;">
-                <div class="span-7"><a href="http://www.gsnetx.org"><img src="img/gsnetxLogo_White.png" width="225" height="96" alt="Girl Scouts of Northeast Texas" id="gsnetxLogo" /></a></div>
-                <div class="span-17 last">
-                    <div id="searchWrapper">
-                        <div id="eyebrow">
-                            <ul>
-                                <li><a href="#">Financial Literacy</a></li>
-                                <li><a href="#" target="_blank">eBudde</a></li>
-                                <li><a href="http://www.littlebrowniebakers.com/" target="_blank">Little Brownie Bakers</a></li>
-                            </ul>
-                        </div>
-                        <div id="siteSearch"><input type="text" id="search" name="search" class="searchTerm" value="" /><label for="search"></label></label></div>
-                    </div>
-                </div>
-                <div class="span-24" style="background-color:#009447;width:960px;">
-                    <div id="navWrapper">
-                        <ul class="siteNavList">
-                            <li><a href="http://www.texascookietime.org" class="currentTab">HOME</a></li>
-                            <li><a href="http://www.texascookietime.org/girl-scout-cookies.html">GIRL SCOUT COOKIES</a></li>
-                            <li><a href="http://www.texascookietime.org/families.html">FAMILIES</a></li>
-                            <li><a href="http://www.texascookietime.org/volunteers.html">VOLUNTEERS</a></li>
-                            <li><a href="http://www.texascookietime.org/forms.html">FORMS</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <?php include('i_cookieHeader.php');?>
         <!-- ## BEGIN FORM MAIN BODY ####################################################################################### -->
             <form name="theForm" id="theForm" method="post" action="tcmApplicationConfirm.php">
                 <div>
@@ -97,7 +74,7 @@
                             <div class="span-2 last"><p>&#32;</p></div>
                             <div class="span-24"><p>&#32;</p></div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-20" style="font-size:1.2em;text-align:center;">Online registration for the 2016 Troop Cookie Manager Application Form has closed.</div>
+                            <div class="span-20" style="font-size:1.3em;text-align:center;"><br><br><br><br><br><br><div style="border:3px solid #B42D44;padding:20px;margin:0 auto 20px auto;width:80%;font-weight:bold;color:#B42D44;font-size:1.2em;line-height:1.8em;text-align:center;">This form is currently down for maintenance.  Please try again later.</div><br><br><br><br><br><br></div>
                             <div class="span-2 last"><p>&#32;</p></div>
                             <div class="span-24"><p>&nbsp;</p></div>
                             <div class="span-2"><p>&#32;</p></div>
@@ -116,7 +93,7 @@
                             <div class="span-2"><p>&#32;</p></div>
                             <div class="span-20"><h1>Girl Scout Troop Cookie Manager Agreement</h1></div>
                             <div class="span-2 last"><p>&#32;</p></div>
-                            <div class="span-24" style="height:10px;">&nbsp;</div>
+                            <div class="span-24">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
                             <div class="span-20 newSection" style="height:21px;"><img src="img/troopCookieManagerHeader_Sm.png" width="400" height="21" alt="" /></div>
                             <div class="span-2 last"><p>&#32;</p></div>
@@ -334,7 +311,7 @@
                             <div class="span-24 formFieldSpacer10">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
                             <div class="span-5 textRight input"><input type="text" name="txt11" id="txt11" class="form_Field50 padding2 textCenter textUppercase" tabindex="20" autocomplete="off" maxlength="4" /></div>
-                            <div class="span-9 t1a"><label for="txt11" class="labelNormal">As the Girl Scout Troop Cookie Manager, I understand that collection action will be taken on all outstanding accounts and debts for the Girl Scout Troop cookie money which are not settled in full by March _7__, 2016. I understand that such outstanding accounts or debts may be reported to a credit bureau and referred to collection agencies and pursued through legal action against me.  I agree to pay all reasonable costs and expenses of collecting such outstanding debts and unpaid amounts, including collection agency fees, reasonable attorneys&#146; fees, and costs.</label></div>
+                            <div class="span-9 t1a"><label for="txt11" class="labelNormal">As the Girl Scout Troop Cookie Manager, I understand that collection action will be taken on all outstanding accounts and debts for the Girl Scout Troop cookie money which are not settled in full by <strong>March 7, 2016</strong>. I understand that such outstanding accounts or debts may be reported to a credit bureau and referred to collection agencies and pursued through legal action against me.  I agree to pay all reasonable costs and expenses of collecting such outstanding debts and unpaid amounts, including collection agency fees, reasonable attorneys&#146; fees, and costs.</label></div>
                             <div class="span-6"><div id="txt11Error" class="errorContainer"></div></div>
                             <div class="span-2 last">&#32;</div>
                             <div class="span-24 formFieldSpacer10">&#32;</div>
@@ -400,37 +377,26 @@
                         <!-- ## END PAGE 4 ################################################################################################# -->
                     <?php }?>
                     </div>
-                    <div class="container">
-                        <div id="footerWrapper">
-                            <div id="copyRight">&copy; <?php auto_copyright();?> Girl Scouts of Northeast Texas</div>
-                            <div id="socialMedia">
-                                <a href="https://twitter.com/GSNETXcouncil" target="_blank"><img src="img/twitter_30_white.png" width="30" height="30" /></a>
-                                <a href="https://www.facebook.com/GSNETX?ref=ts" target="_blank"><img src="img/facebook_30_white.png" width="30" height="30" /></a>
-                                <a href="https://www.youtube.com/channel/UC4uxrvCdVYkGzLZdocf1aHQ" target="_blank"><img src="img/youtube_30_white.png" width="30" height="30" /></a>
-                                <a href="http://instagram.com/gsnetxcouncil" target="_blank"><img src="img/instagram_30_white.png" width="30" height="30" /></a>
-                            </div>
-                        </div>
-                    </div>
+                    <?php include('i_cookieFooter.php');?>
                 </div>
                 <!-- ############################################################################################################### -->
                 <div style="clear:both;">
                     <br><br>
                     <input type="hidden" name="submitRegistration" id="submitRegistration" value="submitTroopCookieManagerRegistration" tabindex="-1" />
-                    <input type="text" name="formSecret" id="formSecret" value="" tabindex="-1" placeholder="formSecret" />
-                    <input type="text" name="serviceUnitTest" id="serviceUnitTest" value="" tabindex="-1" placeholder="serviceUnit" />
+                    <input type="hidden" name="formSecret" id="formSecret" value="" tabindex="-1" placeholder="formSecret" />
+                    <input type="hidden" name="serviceUnitTest" id="serviceUnitTest" value="" tabindex="-1" placeholder="serviceUnit" />
                     <div class="formLableH">Ignore if visible: <label for="labrea">&#160;</label><input type="text" name="labrea" id="labrea" tabindex="-1" /></div>
-                    <div style="display: none;"><a href="https://forms.gsnetx.org/chap.php">servo-staircase</a></div>
+                    <div style="display: none;"><a href="https://webforms.gsnetx.org/numbshoe.php">representational-silhouette</a></div>
                 </div>
             </form>
         </div>
-        <script src="js/vendors/modernizr.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-        <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.js"></script>
-        <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/additional-methods.js"></script>
+        <script src="../common/js/jquery.min.js" ></script>                                                                                                   <!-- V 1.11.2 -->
+        <script src="../common/js/jquery-ui.min.js"></script>                                                                                                 <!-- V 1.11.2 -->
+        <script src="../common/js/jquery.validate.min.js"></script>                                                                                           <!-- V 1.14.0 -->
+        <script src="../common/js/additional-methods.min.js"></script>                                                                                        <!-- V 1.14.0 -->
         <script src="js/vendors/jquery.maskedinput.js"></script>
         <script src="js/i_texasCookieTime.js" type="text/javascript"></script>
-        <!--<script src="js/i_tcmApplicationValidation.js" type="text/javascript"></script>-->
+        <script src="js/i_tcmApplicationValidation.js" type="text/javascript"></script>
 
         <script>
             // function checkPopup() {

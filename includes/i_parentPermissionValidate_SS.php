@@ -15,20 +15,20 @@
         } else {
             echo "false";
         }
-    } else if (ISSET($_REQUEST["permGSTroop"])) {
-        $permGSTroop = $_REQUEST["permGSTroop"];
-        if ((ctype_alnum($permGSTroop))&&(strlen($permGSTroop)<=4)){
-            echo "true";
-        } else {
-            echo "false";
-        }
-	} else if (ISSET($_REQUEST["permSU"])) {
-        $permSU = $_REQUEST["permSU"];
-        if ((ctype_digit($permSU))&&(strlen($permSU)==3)){
-            echo "true";
-        } else {
-            echo "false";
-        }
+    //} else if (ISSET($_REQUEST["permGSTroop"])) {
+     //   $permGSTroop = $_REQUEST["permGSTroop"];
+     //   if ((ctype_alnum($permGSTroop))&&(strlen($permGSTroop)<=4)){
+     //       echo "true";
+     //   } else {
+     //       echo "false";
+     //   }
+	//} else if (ISSET($_REQUEST["permSU"])) {
+     //   $permSU = $_REQUEST["permSU"];
+     //   if ((ctype_digit($permSU))&&(strlen($permSU)==3)){
+     //       echo "true";
+     //   } else {
+     //       echo "false";
+     //   }
 	} else if (ISSET($_REQUEST["permPackages"])) {
 		$permPackages = stripslashes(str_replace("'","",$_REQUEST["permPackages"]));
         if (ctype_digit($permPackages)){
@@ -115,6 +115,20 @@
     } else if(ISSET($_REQUEST["perm5"])) {
         $perm5 = stripslashes(trim(str_replace("'","",$_REQUEST["perm5"])));
         if (ctype_alpha($perm5)){
+            echo "true";
+        } else {
+            echo "false";
+        }
+    } else if(ISSET($_REQUEST["perm6"])) {
+        $perm6 = stripslashes(trim(str_replace("'","",$_REQUEST["perm6"])));
+        if (ctype_alpha($perm6)){
+            echo "true";
+        } else {
+            echo "false";
+        }
+    } else if(ISSET($_REQUEST["perm7"])) {
+        $perm7 = stripslashes(trim(str_replace("'","",$_REQUEST["perm7"])));
+        if (ctype_alpha($perm7)){
             echo "true";
         } else {
             echo "false";

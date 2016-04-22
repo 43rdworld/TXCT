@@ -12,9 +12,9 @@
     } else if ($_SERVER['COMPUTERNAME'] == 'V-WWW04-WEBER') {
 
     }
-    require("i_ODBC_Connection.php");								//=	CREATES DATA CONNECTION TO DATABASE
-    require("i_ODBC_Functions.php");								//= LOAD FORM FUNCTIONS
-    require("includes/i_OFRSettings.php");
+    require("i_PDOConnection.php");								//=	CREATES DATA CONNECTION TO DATABASE
+    require("i_PDOFunctions.php");								//= LOAD FORM FUNCTIONS
+    setRegistrationParams('10/01/2015','03/07/2016');
     session_start();												//= START SESSION TO PREVENT RE-SUBMITTING FORM
     $formSecret=md5(uniqid(rand(), true));							//= SET SECRET NUMBER TO USE IN DUPLICATE SUBMISSION DETECTION
 

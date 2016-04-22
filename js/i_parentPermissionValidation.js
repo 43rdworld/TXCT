@@ -12,12 +12,10 @@ $(document).ready(function () {
 				   remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 			  permGSTroop: {
-				 required: true,
-				   remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
+				 required: true
 			},
 				   permSU: {
-				 required: true,
-				  // remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
+				 required: true
 			},
 			 permPackages: {
 				 required: true,
@@ -81,8 +79,18 @@ $(document).ready(function () {
 				equalTo: '#perm1',
 				remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
+            perm6: {
+                required: true,
+                equalTo: '#perm1',
+                remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
+            },
+            perm7: {
+                required: true,
+                equalTo: '#perm1',
+                remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
+            },
 			permCClub: {
-				required: true,
+				required: true
 				  //remote: {url: "includes/i_parentPermissionValidate_SS.php", async: false}
 			},
 			permCC1: {
@@ -187,6 +195,10 @@ $(document).ready(function () {
                 error.appendTo("#perm4Error");
             } else if(element.attr("name") === "perm5") {
                 error.appendTo("#perm5Error");
+            } else if(element.attr("name") === "perm6") {
+                error.appendTo("#perm6Error");
+            } else if(element.attr("name") === "perm7") {
+                error.appendTo("#perm7Error");
             } else if(element.attr("name") === "permCClub") {
                 error.appendTo("#permCClubError");
             } else if(element.attr("name") === "permCC1") {
@@ -231,11 +243,11 @@ $(document).ready(function () {
                        remote: "* No numbers or special characters"
             },
                   permGSTroop: {
-                     required: "* Troop number is required",
+                     required: "* Troop number is required"
                        //remote: "* Troop # must be at least 2 characters"
             },
                        permSU: {
-                     required: "* Service Unit is required",
+                     required: "* Service Unit is requiredzz"
                        //remote: "* Service Unit is requiredz"
             },
                  permPackages: {
@@ -280,28 +292,38 @@ $(document).ready(function () {
                      required: "* Please enter your initials",
                        remote: "* Please enter your initials"
             },
-                perm2: {
+                        perm2: {
                      required: "* Please enter your initials",
                       equalTo: "* Initials must match",
                        remote: "* Please enter your initials"
             },
-                perm3: {
+                        perm3: {
                      required: "* Please enter your initials",
                       equalTo: "* Initials must match",
                        remote: "* Please enter your initials"
             },
-                perm4: {
+                        perm4: {
                      required: "* Please enter your initials",
                       equalTo: "* Initials must match",
                        remote: "* Please enter your initials"
             },
-                perm5: {
+                        perm5: {
+                     required: "* Please enter your initials",
+                      equalTo: "* Initials must match",
+                       remote: "* Please enter your initials"
+            },
+                        perm6: {
+                     required: "* Please enter your initials",
+                      equalTo: "* Initials must match",
+                       remote: "* Please enter your initials"
+            },
+                        perm7: {
                      required: "* Please enter your initials",
                       equalTo: "* Initials must match",
                        remote: "* Please enter your initials"
             },
                 permCClub: {
-                    required: "* Select a Cookie Club option",
+                    required: "* Select a Cookie Club option"
                     //remote:    "* Select a Cookie Club option"
             },
                 permCC1: {
@@ -360,7 +382,7 @@ $(document).ready(function () {
             },
                 permHomePhone: {
                     required: "* Home phone is required",
-					phone:	"* A valid phone number is required",
+    					phone:	"* A valid phone number is required",
                     remote: "* A valid phone number is required"
             },
                 permGradLevel:  {
@@ -387,7 +409,7 @@ $(document).ready(function () {
         return (
             value.match(/^[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}/)
         );
-    })
+    });
     $.validator.addMethod('phone', function(value) {
         return (
             value.match(/^((\+)?[1-9]{1,2})?([-\s\.])?(\(\d\)[-\s\.]?)?((\(\d{1,4}\))|\d{1,4})(([-\s\.])?[0-9]{1,12}){1,2}(\s*(ext|x)\s*\.?:?\s*([0-9]+))?$/)

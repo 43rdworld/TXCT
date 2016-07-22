@@ -35,10 +35,10 @@ $(document).ready(function () {
                       remote: {url: "includes/i_tcmApplicationValidate.php", async: false}
                },
                     volTroop: {
-                    required: true,
+                    required: true
                       //remote: {url: "includes/i_tcmApplicationValidate.php", async: false}
                },
-                       volSU: {
+                       permSU: {
                     required: true
                       //remote: {url: "includes/i_tcmApplicationValidate.php", async: false}
                },
@@ -206,10 +206,10 @@ $(document).ready(function () {
                       remote: "* A valid ID number is required"
             },
                     volTroop: {
-                    required: "* Troop number is required",
+                    required: "* Troop number is required"
                       //remote: "* Must be at least 3 characters"
             },
-                       volSU: {
+                       permSU: {
                     required: "* Service Unit is required"
                       //remote: "* Service Unit is Required"
             },

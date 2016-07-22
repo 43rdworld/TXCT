@@ -12,9 +12,9 @@
     } else if ($_SERVER['COMPUTERNAME'] == 'V-WWW04-WEBER') {
 
     }
-    require("i_ODBC_Connection.php");								//=	CREATES DATA CONNECTION TO DATABASE
-    require("i_ODBC_Functions.php");								//= LOAD FORM FUNCTIONS
-    require("includes/i_OFRSettings.php");
+    require("i_PDOConnection.php");								//=	CREATES DATA CONNECTION TO DATABASE
+    require("i_PDOFunctions.php");								//= LOAD FORM FUNCTIONS
+    setRegistrationParams('10/01/2015','03/07/2016');
     session_start();												//= START SESSION TO PREVENT RE-SUBMITTING FORM
     $formSecret=md5(uniqid(rand(), true));							//= SET SECRET NUMBER TO USE IN DUPLICATE SUBMISSION DETECTION
 
@@ -144,7 +144,7 @@
                             <div class="span-2 last"><p>&#32;</p></div>
                             <div class="span-24">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-20 newSection" style="height:21px;"><img src="img/registrationInfoHeader_Sm.png" width="350" height="21" alt="" /></div>
+                            <div class="span-20 newSection" style="height:21px;"><img src="img/registrationInfoHeader_Sm.png" width="400" height="21" alt="" /></div>
                             <div class="span-2 last"><p>&#32;</p></div>
                             <div class="span-24">&#32;</div>
                             <div class="span-2" style="height:2px;"><p>&#32;</p></div>
@@ -260,7 +260,7 @@
                             <!-- ACKNOWLEDGEMENTS AND RESPONSIBILITIES SECTION ========================================================================================= -->
                             <div class="span-24 marginTop15">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-20 headerSection"><img src="img/parentResponsibilityHeader_Sm.png" width="350" height="21" style="border:none;" alt="" /></div>
+                            <div class="span-20 headerSection"><img src="img/parentResponsibilityHeader_Sm.png" width="400" height="21" style="border:none;" alt="" /></div>
                             <div class="span-2 last"><p>&#32;</p></div>
                             <div class="span-24">&#32;</div>
                             <div class="span-2" style="height:2px;"><p>&#32;</p></div>
@@ -312,7 +312,7 @@
                             <div class="span-24 formFieldSpacer">&#32;</div>
                             <div class="span-24 marginTop10">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-20 headerSection"><img src="img/cookieClub_InfoHeader_Sm.png" width="350" height="21" style="border:none;" alt="" /></div>
+                            <div class="span-20 headerSection"><img src="img/cookieClub_InfoHeader_Sm.png" width="400" height="21" style="border:none;" alt="" /></div>
                             <div class="span-2 last"><p>&#32;</p></div>
                             <div class="span-24">&#32;</div>
                             <div class="span-2" style="height:2px;"><p>&#32;</p></div>
@@ -368,7 +368,7 @@
                             <!-- ACKNOWLEDGEMENTS AND RESPONSIBILITIES SECTION ========================================================================================= -->
                             <div class="span-24 marginTop10">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-20 headerSection"><img src="img/contactInformationHeader_Sm.png" width="350" height="21" style="border:none;" alt="" /></div>
+                            <div class="span-20 headerSection"><img src="img/contactInformationHeader_Sm.png" width="400" height="21" style="border:none;" alt="" /></div>
                             <div class="span-2 last"><p>&#32;</p></div>
                             <div class="span-24">&#32;</div>
                             <div class="span-2" style="height:2px;"><p>&#32;</p></div>
@@ -445,7 +445,7 @@
                            <!-- CASH OPTION SECTION =================================================================================================================== -->
                             <div class="span-24 marginTop10">&#32;</div>
                             <div class="span-2"><p>&#32;</p></div>
-                            <div class="span-20 headerSection"><img src="img/cashOptionHeader_Sm.png" width="350" height="21" style="border:none;" alt="" /></div>
+                            <div class="span-20 headerSection"><img src="img/cashOptionHeader_Sm.png" width="400" height="21" style="border:none;" alt="" /></div>
                             <div class="span-2 last"><p>&#32;</p></div>
                             <div class="span-24">&#32;</div>
                             <div class="span-2" style="height:2px;"><p>&#32;</p></div>

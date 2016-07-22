@@ -5,6 +5,7 @@
     
     function getServiceUnit($troopNum){
 		$troopYear = '2015';
+		$troop_SUNumber = '';
 		try
 		{
 			$dbh = new PDO('odbc:webEventsRO','Events_Web_RO','%readonly%');
@@ -33,6 +34,7 @@
             }
             } else {
                 $errors = $stmt->errorInfo();
+				
                 //echo("ERRORS: ".$errors[2]);
         }
 
@@ -44,7 +46,7 @@
         $stmt->execute();
         $data = $stmt->fetchAll();
         $select = "<select class\"form_Select300\" style=\"width:300px;\" name=\"permSU\" id=\"permSU\" tabIndex=\"9\">
-        <option value=\"\">Select your Service Unit -- zzz</option>";
+        <option value=\"\">Select your Service Unit --</option>";
         foreach ($data as $row) {
             if($row["su_Number"] == $troop_SUNumber) {
                 $selected = 'selected';

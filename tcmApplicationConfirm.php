@@ -322,7 +322,7 @@
             }
         } else {
 //            echo "HTTP_REFERRER NOT COMING FROM TCM APPLICATION - REDIRECT TO FORM HOMEPAGE - DO NOT PROCESS<br>";
-            exit();
+            // exit();
             session_unset();
             session_destroy();
              header("location: tcmApplication.php");

@@ -1,0 +1,14 @@
+PHP API WRAPPERS
+===================================================
+https://github.com/dfmedia/dfm-smug-wrapper
+
+http://phpsmug.com/docs/
+
+
+
+
+
+SMUG MUG API INFO
+===================================================
+API Key: MO4savPcj5yrRNGXeUDJoehdRYs3odEl
+API Secret: 0c129f255a9a1e69f827168403f1cfdd

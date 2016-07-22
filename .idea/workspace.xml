@@ -2,52 +2,163 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0618caea-f26f-4847-8a66-be5a9fea7f91" name="Default" comment="TXCT SUCC Order Form Update - 7-21-16 8:00 PM">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/includes/i_ACHSettings.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/includes/i_OFRSettings.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/includes/i_ParentPermissionSettings.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/includes/i_T2TSettings.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/includes/i_TCMSettings.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/includes/i_parentPermissionValidate.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/includes/i_settings.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/i_PermissionValidation.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/i_RegistrationValidation.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/i_T2TValidation.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/i_permissionValidateScripts.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/i_t2tValidateScripts.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/i_tcmRegistrationValidation.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/i_validateScripts.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/Thumbs.db" afterPath="$PROJECT_DIR$/img/Thumbs.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/accountabilitiesHeader_Sm.png" afterPath="$PROJECT_DIR$/img/accountabilitiesHeader_Sm.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/billingInformationReview.png" afterPath="$PROJECT_DIR$/img/billingInformationReview.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/cashOptionHeader_Sm.png" afterPath="$PROJECT_DIR$/img/cashOptionHeader_Sm.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/contactInformationHeader_Sm.png" afterPath="$PROJECT_DIR$/img/contactInformationHeader_Sm.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/cookieClub_InfoHeader_Sm.png" afterPath="$PROJECT_DIR$/img/cookieClub_InfoHeader_Sm.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/enterPaymentInfo.png" afterPath="$PROJECT_DIR$/img/enterPaymentInfo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/parentResponsibilityHeader_Sm.png" afterPath="$PROJECT_DIR$/img/parentResponsibilityHeader_Sm.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/registrationInfoHeader_Sm.png" afterPath="$PROJECT_DIR$/img/registrationInfoHeader_Sm.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/troopCookieManagerHeader_Sm.png" afterPath="$PROJECT_DIR$/img/troopCookieManagerHeader_Sm.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/txct2016.iml" afterPath="$PROJECT_DIR$/.idea/txct2016.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Thumbs.db" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/favicon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/accordion/Thumbs.db" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/accordion/troop2733.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/accordion/troop3234.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/accordion/troop3402.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/accordion/troop5295.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/accordion/troop6429.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/accordion/troop6448.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/accordion/troop6805.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/accordion/troop7432.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/accordion/troop7457.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/achAccountDetailBack.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/achRoutingDetailBack.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/ach_TroopSUHeader.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/button_EnterPaymentInformation.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/button_ReviewDonationInformation.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/button_SubmitAcknowledgment.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/button_SubmitInfoAndUploadFile.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/button_SubmitOFRReport.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/button_SubmitOrder.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/button_SubmitPaymentInformation.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/cookieBillPaymentHeader.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/cookieTShirtLarge.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/cookieTShirtThumbnail.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/customerInformationHeader_Sm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/donorInformationReview.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/exampleCheck.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/hdr_ACHPayment.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/hdr_ACHPayment.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/hdr_ACHTCMInformation.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/hdr_ACHTroopLeaderInformation.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/hdr_ACHTroopSU_Select.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/hdr_Admin.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/hdr_CookieRally_ContactInfo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/hdr_CookieRally_OrderPickupInfo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/hdr_CustomerInformation.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/hdr_DeliveryInformation.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/hdr_DonationConfirmation.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/hdr_OFRIndividualDelinquency.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/hdr_OFRReportInformation.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/hdr_OrderCookieSquadTShirt.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/hdr_OrderSUCCTShirt.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/hdr_PPAdmin.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/hdr_PaymentInformation.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/hdr_PickupDelivery.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/hdr_RallyPlaceOrder.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/hdr_TCMAdmin.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/header_BillingInformation.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/header_PaymentInformation.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/icon_BrokenEmail.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/icon_Clock.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/icon_Delete.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/icon_Dinosaur.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/icon_Edit.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/icon_Info.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/icon_Info48.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/icon_Info64.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/icon_Lock.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/icon_TwoUsers.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/icon_gsArtProfile.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/info_CVV2Codes.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/list_Arrow_Red.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/media_32_white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/pickupDeliveryHeader_Sm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/poweredByUSAePay.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/questionMark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/rallyPatch.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/secure90x72.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/submitTShirtOrderButton.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/succ_TShirt2017.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/succ_TShirt2017_th.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/tShirtLarge.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/tcm_TShirt2017.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/tcm_Tshirt2017_th.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/th_TrustwaveLogo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/tshirtLarge.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/tshirtPurchaseHeader_Sm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/tshirtThumbnail.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jQuery-Plugin-For-Creating-Loading-Overlay-with-CSS3-Animations-waitMe.zip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/officeHours.xlsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/Thumbs.db" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uploads/Uploaded/Thumbs.db" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SQL/rallyTableCreate.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SQL/saveRallyPackageData.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/achPaymentConfirm.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cookieRallyOrder.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cookieRallyOrderConfirmation.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cookieShirtOrder.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cookieShirtOrderConfirmation.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/accordion-slider.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/screen.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/tooltipster.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/txct - Copy.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/txctAdmin.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/txct_Dev.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/errorLog/error_log.log" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/getPermissionMailList.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/getTCMMailList.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/getTCTSU_ACH.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/dfm-smug-wrapper.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/i_ACHValidate.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/i_CookieShirtOrderValidate_SS.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/i_GetRoutingNumberStatus.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/i_GetServiceUnit.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/i_OFRValidate.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/i_SUCCShirtOrderValidate_SS.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/i_TShirtOrderSettings.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/i_TShirtOrderValidate_SS.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/i_TXCT_AccordionSlider.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/i_errorLogging.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/i_photoUploadValidate.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/i_photoValidate.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/log-referrer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/phpSmug.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i_CookieSquadOrderValidation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i_TCTValidation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i_TShirtOrderValidation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i_ofrValidation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i_photoUploadValidation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i_photoUploadValidation2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i_photoUploadValidation_Delete.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i_succShirtOrderValidation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i_testVal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i_validatePhotoUploadScripts.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/val_SUCCShirtOrder.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/vendors/bloodhound.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/vendors/jquery.accordionSlider.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/vendors/jquery.magnify.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/vendors/jquery.numeric.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/vendors/jquery.tablesorter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/vendors/jquery.tinylimiter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/vendors/seal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/vendors/typeahead.bundle.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/vendors/typeahead.jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ofr.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ofrConfirm.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/photoUpload.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/photoUploadConfirmation.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/refers.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resendEmail.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/smugMug_Integration.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/succShirtOrder.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/succShirtOrderConfirmation.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tcmLookup.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test4.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testSum.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tshirtOrder.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tshirtOrderConfirmation.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/verify_install.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/achPayment.php" afterPath="$PROJECT_DIR$/achPayment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/txct.css" afterPath="$PROJECT_DIR$/css/txct.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getTCTSU.php" afterPath="$PROJECT_DIR$/getTCTSU.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/i_T2TValidate.php" afterPath="$PROJECT_DIR$/includes/i_T2TValidate.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/i_parentPermissionValidate_SS.php" afterPath="$PROJECT_DIR$/includes/i_parentPermissionValidate_SS.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/i_achValidation.js" afterPath="$PROJECT_DIR$/js/i_achValidation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/i_parentPermissionValidation.js" afterPath="$PROJECT_DIR$/js/i_parentPermissionValidation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/i_tcmApplicationValidation.js" afterPath="$PROJECT_DIR$/js/i_tcmApplicationValidation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/i_texasCookieTime.js" afterPath="$PROJECT_DIR$/js/i_texasCookieTime.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ofrReport.php" afterPath="$PROJECT_DIR$/ofrReport.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parentPermission.php" afterPath="$PROJECT_DIR$/parentPermission.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parentPermissionConfirm.php" afterPath="$PROJECT_DIR$/parentPermissionConfirm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/t2t.php" afterPath="$PROJECT_DIR$/t2t.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/t2t_Billing.php" afterPath="$PROJECT_DIR$/t2t_Billing.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/t2t_Confirm.php" afterPath="$PROJECT_DIR$/t2t_Confirm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/t2t_Review.php" afterPath="$PROJECT_DIR$/t2t_Review.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tcmApplication.php" afterPath="$PROJECT_DIR$/tcmApplication.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tcmApplicationConfirm.php" afterPath="$PROJECT_DIR$/tcmApplicationConfirm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tctAdmin.php" afterPath="$PROJECT_DIR$/tctAdmin.php" />
     </list>
     <ignored path="txct2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,164 +178,7 @@
     <favorites_list name="txct2016" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="txct.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/txct.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="559">
-              <caret line="767" column="21" selection-start-line="767" selection-start-column="21" selection-end-line="767" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="i_achValidation.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/i_achValidation.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="189" column="4" selection-start-line="189" selection-start-column="4" selection-end-line="189" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ofrReport.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ofrReport.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="450" column="86" selection-start-line="450" selection-start-column="86" selection-end-line="450" selection-end-column="86" />
-              <folding>
-                <element signature="n#style#0;n#div#10;n#div#2;n#div#1;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#124;n#div#2;n#div#1;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#167;n#div#2;n#div#1;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#194;n#div#2;n#div#1;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#261;n#div#2;n#div#1;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="i_tcmApplicationValidation.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/i_tcmApplicationValidation.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="208" column="58" selection-start-line="208" selection-start-column="58" selection-end-line="208" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="t2t_Confirm.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/t2t_Confirm.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="304" column="72" selection-start-line="304" selection-start-column="72" selection-end-line="304" selection-end-column="72" />
-              <folding>
-                <marker date="1469150037224" expanded="true" signature="12220:12265" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="12389:12394" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="12469:12500" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="12621:12652" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="12775:12806" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="12941:12994" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="12997:13002" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="13390:13422" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="14494:14516" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="14610:14635" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="14638:14643" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="14660:14766" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="14865:14890" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="14893:14898" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="14991:14996" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="15063:15068" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="15085:15168" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="15234:15239" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="15306:15311" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="15328:15411" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="15461:15466" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="15533:15538" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="15555:15638" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="15829:15834" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="15901:15906" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="15923:16006" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="16089:16094" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="16188:16193" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="29039:29052" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="29159:29172" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="29276:29341" ph="..." />
-                <marker date="1469150037224" expanded="true" signature="29344:29351" ph="‘" />
-                <marker date="1469150037224" expanded="true" signature="29393:29400" ph="’" />
-                <marker date="1469150037224" expanded="true" signature="29494:29515" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tctAdmin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tctAdmin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="143" column="41" selection-start-line="143" selection-start-column="41" selection-end-line="143" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="achPayment.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/achPayment.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="185" column="114" selection-start-line="185" selection-start-column="114" selection-end-line="185" selection-end-column="114" />
-              <folding>
-                <element signature="e#15445#15451#0#HTML" expanded="true" />
-                <element signature="e#15451#15457#0#HTML" expanded="true" />
-                <element signature="e#15457#15463#0#HTML" expanded="true" />
-                <element signature="e#15463#15469#0#HTML" expanded="true" />
-                <element signature="e#15469#15475#0#HTML" expanded="true" />
-                <element signature="e#15475#15481#0#HTML" expanded="true" />
-                <element signature="e#16882#16888#0#HTML" expanded="true" />
-                <element signature="e#16888#16894#0#HTML" expanded="true" />
-                <element signature="e#16894#16900#0#HTML" expanded="true" />
-                <element signature="e#16900#16906#0#HTML" expanded="true" />
-                <element signature="e#16906#16912#0#HTML" expanded="true" />
-                <element signature="e#16912#16918#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tcmApplication.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tcmApplication.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="230" column="111" selection-start-line="230" selection-start-column="111" selection-end-line="230" selection-end-column="111" />
-              <folding>
-                <element signature="n#style#0;n#div#42;n#div#2;n#div#1;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="parentPermission.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/parentPermission.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="140" column="179" selection-start-line="140" selection-start-column="179" selection-end-line="140" selection-end-column="179" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="i_parentPermissionValidation.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/i_parentPermissionValidation.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
-              <caret line="416" column="7" selection-start-line="416" selection-start-column="7" selection-end-line="416" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
@@ -333,6 +287,20 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="TXCT2016">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -365,59 +333,13 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="txct2016" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TXCT" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendors" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="txct2016" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TXCT" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="TXCT2016">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="U:/inetpub/wwwroot/assets.gsnetx.org" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
@@ -429,6 +351,9 @@
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
       <method />
     </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -460,6 +385,19 @@
       <scripts />
       <node-interpreter value="project" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
       <method />
     </configuration>
   </component>
@@ -504,7 +442,9 @@
       <workItem from="1468794612265" duration="2472000" />
       <workItem from="1468901798134" duration="3497000" />
       <workItem from="1469068575410" duration="6064000" />
-      <workItem from="1469149123494" duration="914000" />
+      <workItem from="1469149123494" duration="1725000" />
+      <workItem from="1469150872250" duration="12000" />
+      <workItem from="1469150886598" duration="310000" />
     </task>
     <task id="LOCAL-00001" summary="Initial conversion from ODBC to PDO">
       <created>1441060146510</created>
@@ -527,22 +467,29 @@
       <option name="project" value="LOCAL" />
       <updated>1442270517326</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="TXCT SUCC Order Form Update - 7-21-16 8:00 PM">
+      <created>1469150057576</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1469150057576</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146994000" />
+    <option name="totallyTimeSpent" value="148127000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="6" y="0" width="1773" height="1170" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15651679" sideWeight="0.81390375" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15651679" sideWeight="0.81390375" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32987747" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32987747" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291262" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328807" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32799247" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18176973" sideWeight="0.18609625" order="2" side_tool="true" content_ui="tabs" />
@@ -608,13 +555,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/photoUpload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="946">
-          <caret line="302" column="22" selection-start-line="302" selection-start-column="22" selection-end-line="302" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/photoUploadConfirmation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="387">
@@ -730,7 +670,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3451">
           <caret line="203" column="69" selection-start-line="203" selection-start-column="69" selection-end-line="203" selection-end-column="69" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -760,7 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -768,7 +706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2873">
           <caret line="169" column="0" selection-start-line="169" selection-start-column="0" selection-end-line="200" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -776,7 +713,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2601">
           <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="155" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -791,7 +727,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2890">
           <caret line="170" column="51" selection-start-line="170" selection-start-column="51" selection-end-line="170" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -799,7 +734,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="466">
           <caret line="289" column="13" selection-start-line="289" selection-start-column="13" selection-end-line="289" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -808,29 +742,29 @@
         <state relative-caret-position="227">
           <caret line="1205" column="16" selection-start-line="1205" selection-start-column="16" selection-end-line="1205" selection-end-column="16" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1469149968272" expanded="true" signature="14514:14557" ph="..." />
-            <marker date="1469149968272" expanded="true" signature="14800:14805" ph="..." />
-            <marker date="1469149968272" expanded="true" signature="15670:15713" ph="..." />
-            <marker date="1469149968272" expanded="true" signature="34166:34172" ph="'" />
-            <marker date="1469149968272" expanded="true" signature="53893:53899" ph="'" />
-            <marker date="1469149968272" expanded="true" signature="63567:63573" ph="..." />
-            <marker date="1469149968272" expanded="true" signature="63573:63579" ph="..." />
-            <marker date="1469149968272" expanded="true" signature="64457:64463" ph="..." />
-            <marker date="1469149968272" expanded="true" signature="64463:64469" ph="..." />
-            <marker date="1469149968272" expanded="true" signature="65488:65494" ph="..." />
-            <marker date="1469149968272" expanded="true" signature="65494:65500" ph="..." />
-            <marker date="1469149968272" expanded="true" signature="66478:66484" ph="..." />
-            <marker date="1469149968272" expanded="true" signature="66484:66490" ph="..." />
-            <marker date="1469149968272" expanded="true" signature="67563:67569" ph="..." />
-            <marker date="1469149968272" expanded="true" signature="67569:67575" ph="..." />
-            <marker date="1469149968272" expanded="true" signature="68552:68558" ph="..." />
-            <marker date="1469149968272" expanded="true" signature="68558:68564" ph="..." />
-            <marker date="1469149968272" expanded="true" signature="69696:69702" ph="..." />
-            <marker date="1469149968272" expanded="true" signature="69702:69708" ph="..." />
-            <marker date="1469149968272" expanded="true" signature="70627:70633" ph="..." />
-            <marker date="1469149968272" expanded="true" signature="70633:70639" ph="..." />
-            <marker date="1469149968272" expanded="true" signature="71992:71998" ph="'" />
+            <element signature="n#!!doc" expanded="false" />
+            <marker date="1469150186297" expanded="true" signature="14514:14557" ph="..." />
+            <marker date="1469150186297" expanded="true" signature="14800:14805" ph="..." />
+            <marker date="1469150186297" expanded="true" signature="15670:15713" ph="..." />
+            <marker date="1469150186297" expanded="true" signature="34166:34172" ph="'" />
+            <marker date="1469150186297" expanded="true" signature="53893:53899" ph="'" />
+            <marker date="1469150186297" expanded="true" signature="63567:63573" ph="..." />
+            <marker date="1469150186297" expanded="true" signature="63573:63579" ph="..." />
+            <marker date="1469150186297" expanded="true" signature="64457:64463" ph="..." />
+            <marker date="1469150186297" expanded="true" signature="64463:64469" ph="..." />
+            <marker date="1469150186297" expanded="true" signature="65488:65494" ph="..." />
+            <marker date="1469150186297" expanded="true" signature="65494:65500" ph="..." />
+            <marker date="1469150186297" expanded="true" signature="66478:66484" ph="..." />
+            <marker date="1469150186297" expanded="true" signature="66484:66490" ph="..." />
+            <marker date="1469150186297" expanded="true" signature="67563:67569" ph="..." />
+            <marker date="1469150186297" expanded="true" signature="67569:67575" ph="..." />
+            <marker date="1469150186297" expanded="true" signature="68552:68558" ph="..." />
+            <marker date="1469150186297" expanded="true" signature="68558:68564" ph="..." />
+            <marker date="1469150186297" expanded="true" signature="69696:69702" ph="..." />
+            <marker date="1469150186297" expanded="true" signature="69702:69708" ph="..." />
+            <marker date="1469150186297" expanded="true" signature="70627:70633" ph="..." />
+            <marker date="1469150186297" expanded="true" signature="70633:70639" ph="..." />
+            <marker date="1469150186297" expanded="true" signature="71992:71998" ph="'" />
           </folding>
         </state>
       </provider>
@@ -839,46 +773,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
           <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-          <folding>
-            <marker date="1452447827433" expanded="true" signature="644:772" ph="SELECT troop... tbl_TroopNumbers" />
-            <marker date="1452447827433" expanded="true" signature="1628:1751" ph="SELECT su_Nu... tbl_ServiceUnitAssignments" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/i_achValidation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
+        <state relative-caret-position="3213">
           <caret line="189" column="4" selection-start-line="189" selection-start-column="4" selection-end-line="189" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ofrReport.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="450" column="86" selection-start-line="450" selection-start-column="86" selection-end-line="450" selection-end-column="86" />
-          <folding>
-            <element signature="n#style#0;n#div#10;n#div#2;n#div#1;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#124;n#div#2;n#div#1;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#167;n#div#2;n#div#1;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#194;n#div#2;n#div#1;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#261;n#div#2;n#div#1;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/i_tcmApplicationValidation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="208" column="58" selection-start-line="208" selection-start-column="58" selection-end-line="208" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tctAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
+        <state relative-caret-position="2431">
           <caret line="143" column="41" selection-start-line="143" selection-start-column="41" selection-end-line="143" selection-end-column="41" />
           <folding />
         </state>
@@ -886,38 +794,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/achPayment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
+        <state relative-caret-position="3145">
           <caret line="185" column="114" selection-start-line="185" selection-start-column="114" selection-end-line="185" selection-end-column="114" />
-          <folding>
-            <element signature="e#15445#15451#0#HTML" expanded="true" />
-            <element signature="e#15451#15457#0#HTML" expanded="true" />
-            <element signature="e#15457#15463#0#HTML" expanded="true" />
-            <element signature="e#15463#15469#0#HTML" expanded="true" />
-            <element signature="e#15469#15475#0#HTML" expanded="true" />
-            <element signature="e#15475#15481#0#HTML" expanded="true" />
-            <element signature="e#16882#16888#0#HTML" expanded="true" />
-            <element signature="e#16888#16894#0#HTML" expanded="true" />
-            <element signature="e#16894#16900#0#HTML" expanded="true" />
-            <element signature="e#16900#16906#0#HTML" expanded="true" />
-            <element signature="e#16906#16912#0#HTML" expanded="true" />
-            <element signature="e#16912#16918#0#HTML" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tcmApplication.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
+        <state relative-caret-position="3910">
           <caret line="230" column="111" selection-start-line="230" selection-start-column="111" selection-end-line="230" selection-end-column="111" />
-          <folding>
-            <element signature="n#style#0;n#div#42;n#div#2;n#div#1;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/parentPermission.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
+        <state relative-caret-position="2380">
           <caret line="140" column="179" selection-start-line="140" selection-start-column="179" selection-end-line="140" selection-end-column="179" />
           <folding />
         </state>
@@ -925,60 +818,86 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/i_parentPermissionValidation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
+        <state relative-caret-position="7072">
           <caret line="416" column="7" selection-start-line="416" selection-start-column="7" selection-end-line="416" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/txct.css">
+    <entry file="file://$PROJECT_DIR$/js/deleteME/i_t2tValidateScripts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="767" column="21" selection-start-line="767" selection-start-column="21" selection-end-line="767" selection-end-column="21" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/t2t_Confirm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="304" column="72" selection-start-line="304" selection-start-column="72" selection-end-line="304" selection-end-column="72" />
+        <state relative-caret-position="527">
+          <caret line="317" column="13" selection-start-line="317" selection-start-column="13" selection-end-line="317" selection-end-column="13" />
           <folding>
-            <marker date="1469150037224" expanded="true" signature="12220:12265" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="12389:12394" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="12469:12500" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="12621:12652" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="12775:12806" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="12941:12994" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="12997:13002" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="13390:13422" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="14494:14516" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="14610:14635" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="14638:14643" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="14660:14766" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="14865:14890" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="14893:14898" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="14991:14996" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="15063:15068" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="15085:15168" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="15234:15239" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="15306:15311" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="15328:15411" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="15461:15466" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="15533:15538" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="15555:15638" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="15829:15834" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="15901:15906" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="15923:16006" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="16089:16094" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="16188:16193" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="29039:29052" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="29159:29172" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="29276:29341" ph="..." />
-            <marker date="1469150037224" expanded="true" signature="29344:29351" ph="‘" />
-            <marker date="1469150037224" expanded="true" signature="29393:29400" ph="’" />
-            <marker date="1469150037224" expanded="true" signature="29494:29515" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="12220:12265" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="12389:12394" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="12469:12500" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="12621:12652" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="12775:12806" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="12941:12994" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="12997:13002" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="13390:13422" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="14494:14516" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="14610:14635" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="14638:14643" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="14660:14766" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="14865:14890" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="14893:14898" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="14991:14996" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="15063:15068" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="15085:15168" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="15234:15239" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="15306:15311" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="15328:15411" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="15461:15466" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="15533:15538" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="15555:15638" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="15829:15834" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="15901:15906" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="15923:16006" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="16089:16094" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="16188:16193" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="29039:29052" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="29159:29172" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="29276:29341" ph="..." />
+            <marker date="1469150192102" expanded="true" signature="29344:29351" ph="‘" />
+            <marker date="1469150192102" expanded="true" signature="29393:29400" ph="’" />
+            <marker date="1469150192102" expanded="true" signature="29494:29515" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/i_tcmApplicationValidation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="999">
+          <caret line="208" column="58" selection-start-line="208" selection-start-column="58" selection-end-line="208" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ofrReport.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="973">
+          <caret line="450" column="86" selection-start-line="450" selection-start-column="86" selection-end-line="450" selection-end-column="86" />
+          <folding>
+            <element signature="e#43751#43756#1#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/txct.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="973">
+          <caret line="767" column="0" selection-start-line="767" selection-start-column="0" selection-end-line="767" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
